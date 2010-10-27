@@ -1,0 +1,2 @@
+module BuchesHelper
+end

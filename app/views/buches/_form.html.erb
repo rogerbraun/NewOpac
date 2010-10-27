@@ -1,0 +1,185 @@
+<%= form_for(@buch) do |f| %>
+  <% if @buch.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@buch.errors.count, "error") %> prohibited this buch from being saved:</h2>
+
+      <ul>
+      <% @buch.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :titel %><br />
+    <%= f.text_field :titel %>
+  </div>
+  <div class="field">
+    <%= f.label :autor %><br />
+    <%= f.text_field :autor %>
+  </div>
+  <div class="field">
+    <%= f.label :hrsg %><br />
+    <%= f.text_field :hrsg %>
+  </div>
+  <div class="field">
+    <%= f.label :signatur %><br />
+    <%= f.text_field :signatur %>
+  </div>
+  <div class="field">
+    <%= f.label :jahr %><br />
+    <%= f.text_field :jahr %>
+  </div>
+  <div class="field">
+    <%= f.label :kommentar %><br />
+    <%= f.text_area :kommentar %>
+  </div>
+  <div class="field">
+    <%= f.label :anmerkungen %><br />
+    <%= f.text_area :anmerkungen %>
+  </div>
+  <div class="field">
+    <%= f.label :auflage %><br />
+    <%= f.text_field :auflage %>
+  </div>
+  <div class="field">
+    <%= f.label :baende %><br />
+    <%= f.text_field :baende %>
+  </div>
+  <div class="field">
+    <%= f.label :bearbeiter %><br />
+    <%= f.text_field :bearbeiter %>
+  </div>
+  <div class="field">
+    <%= f.label :bestelladresse %><br />
+    <%= f.text_area :bestelladresse %>
+  </div>
+  <div class="field">
+    <%= f.label :drehbuch %><br />
+    <%= f.text_field :drehbuch %>
+  </div>
+  <div class="field">
+    <%= f.label :format %><br />
+    <%= f.text_field :format %>
+  </div>
+  <div class="field">
+    <%= f.label :inhalt %><br />
+    <%= f.text_area :inhalt %>
+  </div>
+  <div class="field">
+    <%= f.label :sprache %><br />
+    <%= f.text_field :sprache %>
+  </div>
+  <div class="field">
+    <%= f.label :literaturvorlage %><br />
+    <%= f.text_field :literaturvorlage %>
+  </div>
+  <div class="field">
+    <%= f.label :nebensignatur %><br />
+    <%= f.text_field :nebensignatur %>
+  </div>
+  <div class="field">
+    <%= f.label :ort %><br />
+    <%= f.text_field :ort %>
+  </div>
+  <div class="field">
+    <%= f.label :platz %><br />
+    <%= f.text_field :platz %>
+  </div>
+  <div class="field">
+    <%= f.label :preis %><br />
+    <%= f.text_field :preis %>
+  </div>
+  <div class="field">
+    <%= f.label :publikationsart %><br />
+    <%= f.text_field :publikationsart %>
+  </div>
+  <div class="field">
+    <%= f.label :reihe %><br />
+    <%= f.text_field :reihe %>
+  </div>
+  <div class="field">
+    <%= f.label :seiten %><br />
+    <%= f.text_field :seiten %>
+  </div>
+  <div class="field">
+    <%= f.label :stifter %><br />
+    <%= f.text_field :stifter %>
+  </div>
+  <div class="field">
+    <%= f.label :verlag %><br />
+    <%= f.text_field :verlag %>
+  </div>
+  <div class="field">
+    <%= f.label :standort %><br />
+    <%= f.text_field :standort %>
+  </div>
+  <div class="field">
+    <%= f.label :datensatz %><br />
+    <%= f.text_field :datensatz %>
+  </div>
+  <div class="field">
+    <%= f.label :aufnahmedatum %><br />
+    <%= f.date_select :aufnahmedatum %>
+  </div>
+  <div class="field">
+    <%= f.label :issn %><br />
+    <%= f.text_field :issn %>
+  </div>
+  <div class="field">
+    <%= f.label :isbn %><br />
+    <%= f.text_field :isbn %>
+  </div>
+  <div class="field">
+    <%= f.label :invent %><br />
+    <%= f.text_field :invent %>
+  </div>
+  <div class="field">
+    <%= f.label :autor_japanisch %><br />
+    <%= f.text_field :autor_japanisch %>
+  </div>
+  <div class="field">
+    <%= f.label :hrsg_japanisch %><br />
+    <%= f.text_field :hrsg_japanisch %>
+  </div>
+  <div class="field">
+    <%= f.label :drehbuch_japanisch %><br />
+    <%= f.text_field :drehbuch_japanisch %>
+  </div>
+  <div class="field">
+    <%= f.label :reihe_japanisch %><br />
+    <%= f.text_field :reihe_japanisch %>
+  </div>
+  <div class="field">
+    <%= f.label :titel_japanisch %><br />
+    <%= f.text_field :titel_japanisch %>
+  </div>
+  <div class="field">
+    <%= f.label :verlag_japanisch %><br />
+    <%= f.text_field :verlag_japanisch %>
+  </div>
+  <div class="field">
+    <%= f.label :literaturvorlage_japanisch %><br />
+    <%= f.text_field :literaturvorlage_japanisch %>
+  </div>
+  <div class="field">
+    <%= f.label :nacsis_japanisch %><br />
+    <%= f.text_field :nacsis_japanisch %>
+  </div>
+  <div class="field">
+    <%= f.label :jid %><br />
+    <%= f.text_field :jid %>
+  </div>
+  <div class="field">
+    <%= f.label :nacsis_url %><br />
+    <%= f.text_field :nacsis_url %>
+  </div>
+  <div class="field">
+    <%= f.label :interne_notizen %><br />
+    <%= f.text_field :interne_notizen %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
