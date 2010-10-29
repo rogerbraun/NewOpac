@@ -1,0 +1,49 @@
+<h1>Listing entleihers</h1>
+
+<table>
+  <tr>
+    <th>Anschrift</th>
+    <th>Bearbeiter</th>
+    <th>Email</th>
+    <th>Heimatanschrift</th>
+    <th>Matrikelnr</th>
+    <th>Mobiltelefon</th>
+    <th>Name</th>
+    <th>Status</th>
+    <th>Telefon</th>
+    <th>Telefon2</th>
+    <th>Ub nr</th>
+    <th>Vermerke</th>
+    <th>Geliehene Bücher</th>
+    <th>Überfällige Bücher</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @entleihers.each do |entleiher| %>
+  <tr>
+    <td><%= entleiher.anschrift %></td>
+    <td><%= entleiher.bearbeiter %></td>
+    <td><%= entleiher.email %></td>
+    <td><%= entleiher.heimatanschrift %></td>
+    <td><%= entleiher.matrikelnr %></td>
+    <td><%= entleiher.mobiltelefon %></td>
+    <td><%= entleiher.name %></td>
+    <td><%= entleiher.status %></td>
+    <td><%= entleiher.telefon %></td>
+    <td><%= entleiher.telefon2 %></td>
+    <td><%= entleiher.ub_nr %></td>
+    <td><%= entleiher.vermerke %></td>
+    <td><%= entleiher.lendings.count %></td>
+    <td><%= entleiher.lendings.select(&:overdue?).count %></td>
+    <td><%= link_to 'Show', entleiher %></td>
+    <td><%= link_to 'Edit', edit_entleiher_path(entleiher) %></td>
+    <td><%= link_to 'Destroy', entleiher, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Entleiher', new_entleiher_path %>

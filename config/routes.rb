@@ -1,4 +1,8 @@
 Ausleihe::Application.routes.draw do
+  resources :lendings
+
+  resources :entleihers
+
   resources :buches
 
   # The priority is based upon order of creation:

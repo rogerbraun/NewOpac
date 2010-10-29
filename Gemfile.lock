@@ -28,12 +28,17 @@ GEM
       activemodel (= 3.0.0)
       activesupport (= 3.0.0)
     activesupport (3.0.0)
+    acts_as_ferret (0.5.2)
+      jk-ferret (>= 0.11.8)
+      rails (>= 3.0)
     arel (1.0.1)
       activesupport (~> 3.0.0)
     builder (2.1.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
     i18n (0.4.1)
+    jk-ferret (0.11.8.2)
+      rake
     mail (2.2.7)
       activesupport (>= 2.3.6)
       mime-types
@@ -70,6 +75,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts_as_ferret (>= 0.5)
   rails (= 3.0.0)
   sqlite3-ruby
   will_paginate (~> 3.0.pre2)

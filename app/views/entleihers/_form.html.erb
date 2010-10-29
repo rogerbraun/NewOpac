@@ -1,0 +1,65 @@
+<%= form_for(@entleiher) do |f| %>
+  <% if @entleiher.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@entleiher.errors.count, "error") %> prohibited this entleiher from being saved:</h2>
+
+      <ul>
+      <% @entleiher.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :anschrift %><br />
+    <%= f.text_field :anschrift %>
+  </div>
+  <div class="field">
+    <%= f.label :bearbeiter %><br />
+    <%= f.text_field :bearbeiter %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :heimatanschrift %><br />
+    <%= f.text_field :heimatanschrift %>
+  </div>
+  <div class="field">
+    <%= f.label :matrikelnr %><br />
+    <%= f.text_field :matrikelnr %>
+  </div>
+  <div class="field">
+    <%= f.label :mobiltelefon %><br />
+    <%= f.text_field :mobiltelefon %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br />
+    <%= f.text_field :status %>
+  </div>
+  <div class="field">
+    <%= f.label :telefon %><br />
+    <%= f.text_field :telefon %>
+  </div>
+  <div class="field">
+    <%= f.label :telefon2 %><br />
+    <%= f.text_field :telefon2 %>
+  </div>
+  <div class="field">
+    <%= f.label :ub_nr %><br />
+    <%= f.text_field :ub_nr %>
+  </div>
+  <div class="field">
+    <%= f.label :vermerke %><br />
+    <%= f.text_field :vermerke %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,27 @@
+<h1>Listing lendings</h1>
+
+<table>
+  <tr>
+    <th>Leihende</th>
+    <th>Entleiher</th>
+    <th>Buch</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @lendings.each do |lending| %>
+  <tr<%= if lending.overdue? then " class='overdue'" end%>>
+    <td><%= lending.leihende %></td>
+    <td><%= lending.entleiher.name%></td>
+    <td><%= lending.buch.titel %></td>
+    <td><%= link_to 'Show', lending %></td>
+    <td><%= link_to 'Edit', edit_lending_path(lending) %></td>
+    <td><%= link_to 'Destroy', lending, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Zurück zu den Büchern', buches_path %>

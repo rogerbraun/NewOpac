@@ -1,4 +1,7 @@
 <p id="notice"><%= notice %></p>
+<p>
+  <%= link_to "Buch verleihen", new_lending_path(:buch_id => @buch.id) %>
+</p>
 
 <p>
   <b>Titel:</b>
@@ -146,8 +149,8 @@
 </p>
 
 <p>
-  <b>Svb:</b>
-  <%= @buch.svb %>
+  <b>isbn:</b>
+  <%= @buch.isbn %>
 </p>
 
 <p>

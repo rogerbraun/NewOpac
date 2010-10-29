@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101026173344) do
+ActiveRecord::Schema.define(:version => 20101028123937) do
 
   create_table "buches", :force => true do |t|
     t.string   "titel"
@@ -57,6 +57,31 @@ ActiveRecord::Schema.define(:version => 20101026173344) do
     t.string   "interne_notizen"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "entleihers", :force => true do |t|
+    t.string   "anschrift"
+    t.string   "bearbeiter"
+    t.string   "email"
+    t.string   "heimatanschrift"
+    t.integer  "matrikelnr"
+    t.string   "mobiltelefon"
+    t.string   "name"
+    t.string   "status"
+    t.string   "telefon"
+    t.string   "telefon2"
+    t.string   "ub_nr"
+    t.string   "vermerke"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "lendings", :force => true do |t|
+    t.date     "leihende"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "entleiher_id"
+    t.integer  "buch_id"
   end
 
 end

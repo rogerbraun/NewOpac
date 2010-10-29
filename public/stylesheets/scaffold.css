@@ -54,3 +54,8 @@ div.field, div.actions {
   font-size: 12px;
   list-style: square;
 }
+
+tr.overdue, tr.overdue a {
+  background-color:red;
+  color: white;
+}

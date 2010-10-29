@@ -2,6 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.0'
 gem "will_paginate", "~> 3.0.pre2"
+gem 'acts_as_ferret', '>= 0.5'
 
 
 # Bundle edge Rails instead:
