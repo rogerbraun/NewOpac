@@ -10,7 +10,15 @@ class BuchesController < ApplicationController
     end
   end
 
-  # GET /buches/1
+  def search
+    @search = Buch.search(params[:search])
+    @buches = @search.paginate(:page => params[:page], :per_page => Buch.per_page)
+    respond_to do |format|
+      format.html
+    end 
+  end
+
+  # GET /buchfs/1
   # GET /buches/1.xml
   def show
     @buch = Buch.find(params[:id])

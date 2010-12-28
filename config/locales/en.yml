@@ -3,3 +3,7 @@
 
 en:
   hello: "Hello world"
+  site-name: "OPAC"
+  web-app-theme:
+    new: "New"
+    all: "All"

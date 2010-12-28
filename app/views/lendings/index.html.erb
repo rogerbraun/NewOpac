@@ -1,4 +1,4 @@
-<h1>Listing lendings</h1>
+<h1>Verleihvorgänge</h1>
 
 <table>
   <tr>
@@ -11,13 +11,13 @@
   </tr>
 
 <% @lendings.each do |lending| %>
-  <tr<%= if lending.overdue? then " class='overdue'" end%>>
+  <tr<%= if lending.overdue? then " class='overdue'" elsif lending.returned?then " class='returned'" end%>>
     <td><%= lending.leihende %></td>
-    <td><%= lending.entleiher.name%></td>
+    <td><%= link_to lending.entleiher.name, lending.entleiher%></td>
     <td><%= lending.buch.titel %></td>
+    <td><%= link_to "Zurückgeben", return_lending_path(lending), :method => :post %> </td>
     <td><%= link_to 'Show', lending %></td>
     <td><%= link_to 'Edit', edit_lending_path(lending) %></td>
-    <td><%= link_to 'Destroy', lending, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

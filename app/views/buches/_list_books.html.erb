@@ -1,0 +1,37 @@
+<div class="inner">
+  <table class="table">
+    <tr>             
+      <th class="first">ID</th>
+                <th>
+        <%= t "models.books.titel" %>
+      </th>
+      <th><%= t("models.books.complete_signature") %></th>
+      <th class="last">&nbsp;</th>
+    </tr>
+    <% books.each do |buch| -%>
+    <tr class="<%= cycle("odd", "even") %>">
+      <td>
+        <%= buch.id %>
+      </td>
+                <td>
+        <%= link_to buch.titel, buch_path(buch) %>
+      </td>
+      <td>
+        <%= buch.complete_signature%>
+      </td>
+      <td class="last">
+        <%= link_to "#{t("web-app-theme.show", :default => "Show")}", buch_path(buch) %> <br>
+        <%= link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_buch_path(buch) %> <br>
+        <%= link_to "#{t("web-app-theme.delete", :default => "Delete")}", buch_path(buch), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
+      </td>
+    </tr>          
+    <% end -%>
+  </table>
+  <div class="actions-bar wat-cf">
+    <div class="actions">
+    </div>
+    
+    <%= will_paginate books%>
+    
+  </div>
+</div>

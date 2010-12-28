@@ -3,6 +3,9 @@ class Lending < ActiveRecord::Base
   belongs_to :buch
 
   def overdue?
-    leihende <= DateTime.now
+    (not returned?) and leihende <= DateTime.now
   end
+
+  
+  
 end

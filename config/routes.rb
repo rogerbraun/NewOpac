@@ -3,7 +3,12 @@ Ausleihe::Application.routes.draw do
 
   resources :entleihers
 
+  get "buches/search", :to => "buches#search", :as => "search_buches"
   resources :buches
+
+  post "lendings/return/:id",:to =>  "lendings#return", :as => "return_lending"
+  
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -53,8 +58,9 @@ Ausleihe::Application.routes.draw do
   #   end
 
   # You can have the root of your site routed with "root"
+  # 
   # just remember to delete public/index.html.
-  # root :to => "welcome#index"
+     root :to => "buches#search"
 
   # See how all your routes lay out with "rake routes"
 

@@ -2,7 +2,7 @@ class LendingsController < ApplicationController
   # GET /lendings
   # GET /lendings.xml
   def index
-    @lendings = Lending.all
+    @lendings = Lending.all(:order => "returned, entleiher_id")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -29,6 +29,8 @@ class LendingsController < ApplicationController
     else
       @lending = Lending.new
     end
+    
+    @lending.entleiher_id = session[:last_lending_user] 
 
     @lending.leihende = DateTime.now + 4.weeks
 
@@ -47,10 +49,11 @@ class LendingsController < ApplicationController
   # POST /lendings.xml
   def create
     @lending = Lending.new(params[:lending])
+    session[:last_lending_user] = @lending.entleiher.id
 
     respond_to do |format|
       if @lending.save
-        format.html { redirect_to(@lending, :notice => 'Lending was successfully created.') }
+        format.html { redirect_to(search_buches_path, :notice => 'Lending was successfully created.') }
         format.xml  { render :xml => @lending, :status => :created, :location => @lending }
       else
         format.html { render :action => "new" }
@@ -72,6 +75,15 @@ class LendingsController < ApplicationController
         format.html { render :action => "edit" }
         format.xml  { render :xml => @lending.errors, :status => :unprocessable_entity }
       end
+    end
+  end
+
+  def return
+    @lending = Lending.find(params[:id])
+    @lending.update_attributes(:returned => true)
+
+    respond_to do |format|
+      format.html { redirect_to(:back, :notice => "Buch zurückgegeben") }  
     end
   end
 

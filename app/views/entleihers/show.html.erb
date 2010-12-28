@@ -60,6 +60,15 @@
   <%= @entleiher.vermerke %>
 </p>
 
+<p>
+  <b>Entliehene Bücher</b>
+  <ul>
+    <% @entleiher.lendings.reject(&:returned?).each do |lending| %>
+      <li><%=link_to lending.buch.titel, lending.buch %> | <%= link_to "Buch zurückgeben", return_lending_path(lending), :method => :post %> </li>
+    <% end %>
+  </li>
+</p>
+
 
 <%= link_to 'Edit', edit_entleiher_path(@entleiher) %> |
 <%= link_to 'Back', entleihers_path %>

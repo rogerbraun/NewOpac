@@ -21,6 +21,8 @@ div.field, div.actions {
 }
 
 #notice {
+  margin: 10px;
+  font-size: 30px;
   color: green;
 }
 
@@ -54,8 +56,16 @@ div.field, div.actions {
   font-size: 12px;
   list-style: square;
 }
+tr:nth-child(odd) {
+  background-color:#eee;
+}
 
 tr.overdue, tr.overdue a {
-  background-color:red;
+  background-color:#CC3300;
   color: white;
 }
+tr.returned, tr.returned a {
+  background-color:#3399CC ;
+  color: white;
+}
+

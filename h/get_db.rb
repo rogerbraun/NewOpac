@@ -4,7 +4,7 @@ require "yaml"
 client = Mysql::new("rokuhara.japanologie.kultur.uni-tuebingen.de", "root", "turedurenarumamani", "ajsinfo")
 
 client.query("SET NAMES 'utf8' ")
-result = client.query("select * from buch where id > 10000 LIMIT 3000")
+result = client.query("select * from buch ")
 
 f= open("output","w")
 a = []

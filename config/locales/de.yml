@@ -1,0 +1,32 @@
+de:
+  site-name: "OPAC"
+  search_by_title: "Titel (D oder J)"
+  search_by_author: "Author (D oder J)"
+  search_by_signature: "Signatur"
+  search: "Suchen"
+  models:
+    books:
+      all: "Alle Bücher"
+      titel: "Titel"
+      id: "ID"
+      created_at: "Erstellungsdatum" 
+      complete_signature: "Vollständige Signatur"
+  web-app-theme:
+    new: "Neu"
+    all: "All"
+    list: "Liste"
+    show: "Anzeigen"
+    delete: "Löschen"
+    edit: "Bearbeiten"
+    logout: "Abmelden"
+    confirm: "Ganz sicher?"
+  date:
+    formats: 
+      default: ""
+      long: ""
+      short: ""
+    order: [ :day, :month, :year ]
+    day_names: [Sekmadienis, Pirmadienis, Antradienis, Trečiadienis, Ketvirtadienis, Penktadienis, Sekmadienis]
+    abbr_day_names: [S, P, A, T, K, Pn, Š]
+    month_names: [~, Sausis, Vasaris, Kovas, Balandis, Gegužė, Birželis, Liepa, Rugpjūtis, Rugsėjis, Spalis, Lapkritis, Gruodis]
+    abbr_month_names: [~, Sau, Vas, Kov, Bal, Geg, Bir, Lie, Rugs, Rugp, Spa, Lap, Gruo]

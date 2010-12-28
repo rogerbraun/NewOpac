@@ -1,37 +1,14 @@
-<h1>Listing buches</h1>
-<%= will_paginate @buches %>
-<table>
-  <tr>
-    <th>Titel</th>
-    <th>Autor</th>
-    <th>Hrsg</th>
-    <th>Signatur</th>
-    <th>Nebensignatur</th>
-    <th>Autor japanisch</th>
-    <th>Hrsg japanisch</th>
-    <th>Titel japanisch</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div class="block">
+  <div class="secondary-navigation">
+    <ul class="wat-cf">
+      <li class="first active"><%= link_to "#{t("web-app-theme.list", :default => "List")}", buches_path  %></li>
+      <li><%= link_to "#{t("web-app-theme.new")}", new_buch_path %></li>
+    </ul>
+  </div>          
+  <div class="content">          
+    <h2 class="title"><%= t "models.books.all" %></h2>
+    <%= render :partial => "list_books", :locals => { :books => @buches} %>
+  </div>
+</div>
 
-<% @buches.each do |buch| %>
-  <tr>
-    <td><%= buch.titel %></td>
-    <td><%= buch.autor %></td>
-    <td><%= buch.hrsg %></td>
-    <td><%= buch.signatur %></td>
-    <td><%= buch.nebensignatur %></td>
-    <td><%= buch.autor_japanisch %></td>
-    <td><%= buch.hrsg_japanisch %></td>
-    <td><%= buch.titel_japanisch %></td>
-    <td><%= link_to 'Show', buch %></td>
-    <td><%= link_to 'Edit', edit_buch_path(buch) %></td>
-    <td><%= link_to 'Destroy', buch, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Buch', new_buch_path %>
+<%# content_for :sidebar, render(:partial => 'sidebar') -%>
