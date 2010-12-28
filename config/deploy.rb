@@ -12,7 +12,7 @@ role :db,  "rokuhara.japanologie.kultur.uni-tuebingen.de", :primary => true # Th
 # if you're still using the script/reapear helper you will need
 # these http://github.com/rails/irs_process_scripts
 
-ptions[:pty] = true
+options[:pty] = true
 ssh_options[:forward_agent] = true
 set :deploy_to, "/Users/edv/Sites/opac2"
 set :deploy_via, :remote_cache
@@ -25,9 +25,14 @@ namespace :deploy do
   task :start, :roles => :app  do 
     run "touch #{current_path}/tmp/restart.txt"
   end
-   task :stop do ; end
-   task :restart, :roles => :app do
-  
-   run "touch #{current_path}/tmp/restart.txt"
+
+  task :stop do ; end
+
+  task :seed do
+    run "cd #{current_path} && /usr/bin/env rake db:seed RAILS_ENV=production"
+  end
+
+  task :restart, :roles => :app do
+    run "touch #{current_path}/tmp/restart.txt"
   end
 end
