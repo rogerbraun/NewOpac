@@ -1,4 +1,12 @@
 de:
+  devise:
+    sessions:
+      user:
+        signed_out: "Erfolgreich abgemeldet!"
+        signed_in: "Erfolgreich angemeldet!"
+    registrations:
+      user:
+        signed_up: "Erfolgreich registriert!"
   site-name: "OPAC"
   search_by_title: "Titel (D oder J)"
   search_by_author: "Author (D oder J)"
