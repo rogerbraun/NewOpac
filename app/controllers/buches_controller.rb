@@ -1,4 +1,5 @@
 class BuchesController < ApplicationController
+
   # GET /buches
   # GET /buches.xml
   def index

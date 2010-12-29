@@ -19,6 +19,8 @@ de:
     delete: "Löschen"
     edit: "Bearbeiten"
     logout: "Abmelden"
+    login: "Anmelden"
+    register: "Registrieren"
     confirm: "Ganz sicher?"
   date:
     formats: 
