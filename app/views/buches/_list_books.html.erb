@@ -21,8 +21,12 @@
       </td>
       <td class="last">
         <%= link_to "#{t("web-app-theme.show", :default => "Show")}", buch_path(buch) %> <br>
-        <%= link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_buch_path(buch) %> <br>
-        <%= link_to "#{t("web-app-theme.delete", :default => "Delete")}", buch_path(buch), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
+        <% if can? :update, buch %>
+          <%= link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_buch_path(buch) %> <br>
+        <% end %>
+        <% if can? :destroy, buch %>
+          <%= link_to "#{t("web-app-theme.delete", :default => "Delete")}", buch_path(buch), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
+        <% end %>
       </td>
     </tr>          
     <% end -%>
