@@ -1,3 +1,4 @@
+#encoding: utf-8
 class LendingsController < ApplicationController
   # GET /lendings
   # GET /lendings.xml

@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.0'
+gem 'rails', '3.0.4'
 gem "will_paginate", "~> 3.0.pre2"
 gem "devise"
 gem "cancan"
@@ -9,7 +9,8 @@ gem "cancan"
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3-ruby', :require => 'sqlite3'
+#gem 'sqlite3-ruby', :require => 'sqlite3'
+gem "mysql2"
 gem "meta_search"
 
 # Use unicorn as the web server
@@ -37,4 +38,5 @@ gem "meta_search"
 group :development do
   gem "web-app-theme", ">= 0.6.2"
   gem "faker"
+  gem "sequel"
 end

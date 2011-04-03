@@ -5,7 +5,5 @@ class Lending < ActiveRecord::Base
   def overdue?
     (not returned?) and leihende <= DateTime.now
   end
-
-  
   
 end

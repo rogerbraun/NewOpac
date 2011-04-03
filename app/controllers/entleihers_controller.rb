@@ -2,7 +2,9 @@ class EntleihersController < ApplicationController
   # GET /entleihers
   # GET /entleihers.xml
   def index
-    @entleihers = Entleiher.all
+    @entleihers = Entleiher.paginate :page => params[:page]
+    
+    authorize! :read, @entleihers
 
     respond_to do |format|
       format.html # index.html.erb
@@ -15,6 +17,8 @@ class EntleihersController < ApplicationController
   def show
     @entleiher = Entleiher.find(params[:id])
 
+    authorize! :read, @entleihers
+
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @entleiher }
@@ -25,6 +29,8 @@ class EntleihersController < ApplicationController
   # GET /entleihers/new.xml
   def new
     @entleiher = Entleiher.new
+
+    authorize! :create, @entleihers
 
     respond_to do |format|
       format.html # new.html.erb
