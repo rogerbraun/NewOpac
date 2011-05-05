@@ -17,5 +17,13 @@ class Buch < ActiveRecord::Base
   def complete_signature
     "#{self.signatur} #{self.nebensignatur}"
   end
+
+  def entliehen?
+    !!current_lending 
+  end
+
+  def current_lending
+    lendings.select{|el| el.returned == false}.first
+  end
   
 end

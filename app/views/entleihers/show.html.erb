@@ -1,74 +1,76 @@
-<p id="notice"><%= notice %></p>
+<div class="inner">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Anschrift:</b>
-  <%= @entleiher.anschrift %>
-</p>
+  <p>
+    <b>Anschrift:</b>
+    <%= @entleiher.anschrift %>
+  </p>
 
-<p>
-  <b>Bearbeiter:</b>
-  <%= @entleiher.bearbeiter %>
-</p>
+  <p>
+    <b>Bearbeiter:</b>
+    <%= @entleiher.bearbeiter %>
+  </p>
 
-<p>
-  <b>Email:</b>
-  <%= @entleiher.email %>
-</p>
+  <p>
+    <b>Email:</b>
+    <%= @entleiher.email %>
+  </p>
 
-<p>
-  <b>Heimatanschrift:</b>
-  <%= @entleiher.heimatanschrift %>
-</p>
+  <p>
+    <b>Heimatanschrift:</b>
+    <%= @entleiher.heimatanschrift %>
+  </p>
 
-<p>
-  <b>Matrikelnr:</b>
-  <%= @entleiher.matrikelnr %>
-</p>
+  <p>
+    <b>Matrikelnr:</b>
+    <%= @entleiher.matrikelnr %>
+  </p>
 
-<p>
-  <b>Mobiltelefon:</b>
-  <%= @entleiher.mobiltelefon %>
-</p>
+  <p>
+    <b>Mobiltelefon:</b>
+    <%= @entleiher.mobiltelefon %>
+  </p>
 
-<p>
-  <b>Name:</b>
-  <%= @entleiher.name %>
-</p>
+  <p>
+    <b>Name:</b>
+    <%= @entleiher.name %>
+  </p>
 
-<p>
-  <b>Status:</b>
-  <%= @entleiher.status %>
-</p>
+  <p>
+    <b>Status:</b>
+    <%= @entleiher.status %>
+  </p>
 
-<p>
-  <b>Telefon:</b>
-  <%= @entleiher.telefon %>
-</p>
+  <p>
+    <b>Telefon:</b>
+    <%= @entleiher.telefon %>
+  </p>
 
-<p>
-  <b>Telefon2:</b>
-  <%= @entleiher.telefon2 %>
-</p>
+  <p>
+    <b>Telefon2:</b>
+    <%= @entleiher.telefon2 %>
+  </p>
 
-<p>
-  <b>Ub nr:</b>
-  <%= @entleiher.ub_nr %>
-</p>
+  <p>
+    <b>Ub nr:</b>
+    <%= @entleiher.ub_nr %>
+  </p>
 
-<p>
-  <b>Vermerke:</b>
-  <%= @entleiher.vermerke %>
-</p>
+  <p>
+    <b>Vermerke:</b>
+    <%= @entleiher.vermerke %>
+  </p>
 
-<p>
-  <b>Entliehene Bücher</b>
-  <ul>
-    <% @entleiher.lendings.reject(&:returned?).each do |lending| %>
-      <li><%=link_to lending.buch.titel, lending.buch %> | <%= link_to "Buch zurückgeben", return_lending_path(lending), :method => :post %> </li>
-    <% end %>
-  </li>
-</p>
+  <p>
+    <b>Entliehene Bücher</b>
+    <ul class="list">
+      <% @entleiher.lendings.reject(&:returned?).each do |lending| %>
+        <li><%=link_to lending.buch.titel, lending.buch %> | <%= link_to "Buch zurückgeben", return_lending_path(lending), :method => :post %> </li>
+      <% end %>
+    </li>
+  </p>
 
 
-<%= link_to 'Edit', edit_entleiher_path(@entleiher) %> |
-<%= link_to 'Back', entleihers_path %>
+  <%= link_to 'Edit', edit_entleiher_path(@entleiher) %> |
+  <%= link_to 'Back', entleihers_path %>
+</div>

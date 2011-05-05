@@ -3,7 +3,8 @@ class LendingsController < ApplicationController
   # GET /lendings
   # GET /lendings.xml
   def index
-    @lendings = Lending.all(:order => "returned, entleiher_id")
+    @lendings = Lending.paginate :page => params[:page], :order => "id"
+    authorize! :read, @lendings
 
     respond_to do |format|
       format.html # index.html.erb
@@ -15,6 +16,7 @@ class LendingsController < ApplicationController
   # GET /lendings/1.xml
   def show
     @lending = Lending.find(params[:id])
+    authorize! :read, @lending
 
     respond_to do |format|
       format.html # show.html.erb
@@ -67,6 +69,7 @@ class LendingsController < ApplicationController
   # PUT /lendings/1.xml
   def update
     @lending = Lending.find(params[:id])
+    authorize! :update, @lending
 
     respond_to do |format|
       if @lending.update_attributes(params[:lending])
@@ -81,6 +84,7 @@ class LendingsController < ApplicationController
 
   def return
     @lending = Lending.find(params[:id])
+    authorize! :update, @lending
     @lending.update_attributes(:returned => true)
 
     respond_to do |format|

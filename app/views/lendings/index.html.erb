@@ -1,27 +1,36 @@
-<h1>Verleihvorgänge</h1>
+<h2>Verleihvorgänge</h2>
+<div class="inner">
 
-<table>
-  <tr>
-    <th>Leihende</th>
-    <th>Entleiher</th>
-    <th>Buch</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+  <table class="table">
+    <tr>
+      <th>Leihende</th>
+      <th>Entleiher</th>
+      <th>Buch</th>
+      <th></th>
+      <% if can? :manage, @lendings %>
+        <th></th>
+        <th></th>
+      <% end %>
+    </tr>
 
-<% @lendings.each do |lending| %>
-  <tr<%= if lending.overdue? then " class='overdue'" elsif lending.returned?then " class='returned'" end%>>
-    <td><%= lending.leihende %></td>
-    <td><%= link_to lending.entleiher.name, lending.entleiher%></td>
-    <td><%= lending.buch.titel %></td>
-    <td><%= link_to "Zurückgeben", return_lending_path(lending), :method => :post %> </td>
-    <td><%= link_to 'Show', lending %></td>
-    <td><%= link_to 'Edit', edit_lending_path(lending) %></td>
-  </tr>
-<% end %>
-</table>
+  <% @lendings.each do |lending| %>
+    <tr<%= if lending.overdue? then " class='overdue'" elsif lending.returned? then " class='returned'" end%>>
+      <td><%= lending.leihende %></td>
+      <td><%= link_to lending.entleiher.name, lending.entleiher%></td>
+      <td><%= link_to lending.buch.titel, lending.buch %></td>
+      <td><%= link_to 'Show', lending %></td>
+      <% if can? :manage, @lendings %>
+        <td><%= link_to "Zurückgeben", return_lending_path(lending), :method => :post %> </td>
+        <td><%= link_to 'Edit', edit_lending_path(lending) %></td>
+      <% end %>
+    </tr>
+  <% end %>
+  </table>
+  <div class="actions-bar wat-cf">
+    <div class="actions">
+    <%= will_paginate @lendings %>
+    </div>
+  </div>
 
-<br />
-
-<%= link_to 'Zurück zu den Büchern', buches_path %>
+  <br />
+</div>

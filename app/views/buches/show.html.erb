@@ -10,216 +10,101 @@
   </div>          
   <div class="content">
     <div class="inner">
+      <table class="table">
+        <tr><td><b>Signatur</b></td><td><%= @buch.signatur %></td>
+            <td><b>Nebensignatur<br />Bandzählung</b></td><td><%=@buch.nebensignatur%></td>
+            <td><b>Stifter</b></td><td><%= @buch.stifter %></td>
+        </tr>
+        <tr><td rowspan="2"><b>Autor</b></td>
+            <td colspan="3"><%= @buch.autor %></td>
+            <td><b>Standort</b></td>
+            <td><%= @buch.standort %></td>
+        </tr>
+        <tr>
+          <td colspan="3"><%= @buch.autor_japanisch %></td>
+          <td><b>Publikationsart</b></td>
+          <td><%= @buch.publikationsart %></td>
+        </tr>
+        <tr>
+          <td rowspan="2"><b>Weitere Autoren</b></td>
+          <td colspan="5"><%= @buch.hrsg%></td>
+        </tr> 
+        <tr>
+          <td colspan="5"><%= @buch.hrsg_japanisch %></td>
+        </tr>
+        <tr>
+          <td rowspan="2"><b>Titel</b></td>
+          <td colspan="5"><%= @buch.titel %></td>
+        </tr>
+        <tr>
+          <td colspan="5"><%= @buch.titel_japanisch %></td>
+        </td>
+        <tr>
+          <td><b>Verlag</b></td>
+          <td colspan="3"><%= @buch.verlag %></td>
+          <td colspan="2"><%= @buch.verlag_japanisch %></td>
+        </tr>
+        <tr>
+          <td><b>Ort</b></td>
+          <td><%= @buch.ort %></td>
+          <td><b>Seiten</b></td>
+          <td><%= @buch.seiten %></td>
+          <td><b>Format</b></td>
+          <td><%= @buch.format %></td>
+        </tr>
+        <tr>
+          <td><b>Jahr</b></td>
+          <td><%= @buch.jahr %></td>
+          <td><b>Auflage</b></td>
+          <td><%= @buch.auflage %></td>
+          <td><b>Bände</b></td>
+          <td><%= @buch.baende %></td>
+        </tr>
+        <tr>
+          <td><b>ISBN</b></td>
+          <td colspan="2"><%=@buch.isbn %></td>
+          <td><b>ISSN</b></td>
+          <td colspan="2"><%=@buch.issn %></td>
+        </tr>
+        <tr>
+          <td rowspan="2"><b>Reihe</b></td>
+          <td colspan="5"><%= @buch.reihe %></td>
+        </tr>
+        <tr>
+          <td colspan="5"><%= @buch.reihe_japanisch %></td>
+        </tr>
+        <tr>
+          <td><b>Inhalt</b></td>
+          <td colspan="5"><%= @buch.inhalt %></td>
+        </tr>
+        <tr>
+          <td><b>Anmerkungen</b></td>
+          <td colspan="5"><%= @buch.anmerkungen %></td>
+        </tr>
+        <tr> 
+          <td><b>Nacsis-URL</b></td>
+          <td colspan="5"><%=@buch.nacsis_url %></td>
+        </tr>
+        <tr>
+          <td><b>Nacsis-Eintrag</b></td>
+          <td colspan="5"><%= @buch.nacsis_japanisch %></td>
+        </tr>
+        <tr>
+          <td><b>Sprache</b></td>
+          <td><%= @buch.sprache %></td>
+          <td><b>Preis</b></td>
+          <td><%= @buch.preis %></td>
+          <td><b>Inventarnummer</b></td>
+          <td><%= @buch.invent%></td>
+        </tr>
+        <tr>
+          <td><b>Bearbeiter</b></td>
+          <td><%= @buch.bearbeiter %></td>
+          <td><b>Datum</b></td>
+          <td colspan="2"><%= @buch.created_at %></td>
+        </tr>
+      </table>
       
-        <p>
-          <b><%= t("activerecord.attributes.buch.titel", :default => t("activerecord.labels.titel", :default => "Titel")) %>:</b>
-          <%= @buch.titel %>
-        </p>
-
-        <p>
-          <b><%= t("activerecord.attributes.buch.autor", :default => t("activerecord.labels.autor", :default => "Autor")) %>:</b>
-          <%= @buch.autor %>
-        </p>
-
-        <p>
-          <b><%= t("activerecord.attributes.buch.hrsg", :default => t("activerecord.labels.hrsg", :default => "Hrsg")) %>:</b>
-          <%= @buch.hrsg %>
-        </p>
-
-        <p>
-          <b><%= t("activerecord.attributes.buch.signatur", :default => t("activerecord.labels.signatur", :default => "Signatur")) %>:</b>
-          <%= @buch.signatur %>
-        </p>
-
-        <p>
-          <b><%= t("activerecord.attributes.buch.jahr", :default => t("activerecord.labels.jahr", :default => "Jahr")) %>:</b>
-          <%= @buch.jahr %>
-        </p>
-
-        <p>
-          <b><%= t("activerecord.attributes.buch.kommentar", :default => t("activerecord.labels.kommentar", :default => "Kommentar")) %>:</b>
-          <%= @buch.kommentar %>
-        </p>
-
-        <p>
-          <b><%= t("activerecord.attributes.buch.anmerkungen", :default => t("activerecord.labels.anmerkungen", :default => "Anmerkungen")) %>:</b>
-          <%= @buch.anmerkungen %>
-        </p>
-
-        <p>
-          <b><%= t("activerecord.attributes.buch.auflage", :default => t("activerecord.labels.auflage", :default => "Auflage")) %>:</b>
-          <%= @buch.auflage %>
-        </p>
-
-        <p>
-          <b><%= t("activerecord.attributes.buch.baende", :default => t("activerecord.labels.baende", :default => "Baende")) %>:</b>
-          <%= @buch.baende %>
-        </p>
-
-        <p>
-          <b><%= t("activerecord.attributes.buch.bearbeiter", :default => t("activerecord.labels.bearbeiter", :default => "Bearbeiter")) %>:</b>
-          <%= @buch.bearbeiter %>
-        </p>
-
-        <p>
-          <b><%= t("activerecord.attributes.buch.bestelladresse", :default => t("activerecord.labels.bestelladresse", :default => "Bestelladresse")) %>:</b>
-          <%= @buch.bestelladresse %>
-        </p>
-
-        <p>
-          <b><%= t("activerecord.attributes.buch.drehbuch", :default => t("activerecord.labels.drehbuch", :default => "Drehbuch")) %>:</b>
-          <%= @buch.drehbuch %>
-        </p>
-
-        <p>
-          <b><%= t("activerecord.attributes.buch.format", :default => t("activerecord.labels.format", :default => "Format")) %>:</b>
-          <%= @buch.format %>
-        </p>
-
-        <p>
-          <b><%= t("activerecord.attributes.buch.inhalt", :default => t("activerecord.labels.inhalt", :default => "Inhalt")) %>:</b>
-          <%= @buch.inhalt %>
-        </p>
-
-        <p>
-          <b><%= t("activerecord.attributes.buch.sprache", :default => t("activerecord.labels.sprache", :default => "Sprache")) %>:</b>
-          <%= @buch.sprache %>
-        </p>
-
-        <p>
-          <b><%= t("activerecord.attributes.buch.literaturvorlage", :default => t("activerecord.labels.literaturvorlage", :default => "Literaturvorlage")) %>:</b>
-          <%= @buch.literaturvorlage %>
-        </p>
-
-        <p>
-          <b><%= t("activerecord.attributes.buch.nebensignatur", :default => t("activerecord.labels.nebensignatur", :default => "Nebensignatur")) %>:</b>
-          <%= @buch.nebensignatur %>
-        </p>
-
-        <p>
-          <b><%= t("activerecord.attributes.buch.ort", :default => t("activerecord.labels.ort", :default => "Ort")) %>:</b>
-          <%= @buch.ort %>
-        </p>
-
-        <p>
-          <b><%= t("activerecord.attributes.buch.platz", :default => t("activerecord.labels.platz", :default => "Platz")) %>:</b>
-          <%= @buch.platz %>
-        </p>
-
-        <p>
-          <b><%= t("activerecord.attributes.buch.preis", :default => t("activerecord.labels.preis", :default => "Preis")) %>:</b>
-          <%= @buch.preis %>
-        </p>
-
-        <p>
-          <b><%= t("activerecord.attributes.buch.publikationsart", :default => t("activerecord.labels.publikationsart", :default => "Publikationsart")) %>:</b>
-          <%= @buch.publikationsart %>
-        </p>
-
-        <p>
-          <b><%= t("activerecord.attributes.buch.reihe", :default => t("activerecord.labels.reihe", :default => "Reihe")) %>:</b>
-          <%= @buch.reihe %>
-        </p>
-
-        <p>
-          <b><%= t("activerecord.attributes.buch.seiten", :default => t("activerecord.labels.seiten", :default => "Seiten")) %>:</b>
-          <%= @buch.seiten %>
-        </p>
-
-        <p>
-          <b><%= t("activerecord.attributes.buch.stifter", :default => t("activerecord.labels.stifter", :default => "Stifter")) %>:</b>
-          <%= @buch.stifter %>
-        </p>
-
-        <p>
-          <b><%= t("activerecord.attributes.buch.verlag", :default => t("activerecord.labels.verlag", :default => "Verlag")) %>:</b>
-          <%= @buch.verlag %>
-        </p>
-
-        <p>
-          <b><%= t("activerecord.attributes.buch.standort", :default => t("activerecord.labels.standort", :default => "Standort")) %>:</b>
-          <%= @buch.standort %>
-        </p>
-
-        <p>
-          <b><%= t("activerecord.attributes.buch.datensatz", :default => t("activerecord.labels.datensatz", :default => "Datensatz")) %>:</b>
-          <%= @buch.datensatz %>
-        </p>
-
-        <p>
-          <b><%= t("activerecord.attributes.buch.aufnahmedatum", :default => t("activerecord.labels.aufnahmedatum", :default => "Aufnahmedatum")) %>:</b>
-          <%= @buch.aufnahmedatum %>
-        </p>
-
-        <p>
-          <b><%= t("activerecord.attributes.buch.issn", :default => t("activerecord.labels.issn", :default => "Issn")) %>:</b>
-          <%= @buch.issn %>
-        </p>
-
-        <p>
-          <b><%= t("activerecord.attributes.buch.isbn", :default => t("activerecord.labels.isbn", :default => "Isbn")) %>:</b>
-          <%= @buch.isbn %>
-        </p>
-
-        <p>
-          <b><%= t("activerecord.attributes.buch.invent", :default => t("activerecord.labels.invent", :default => "Invent")) %>:</b>
-          <%= @buch.invent %>
-        </p>
-
-        <p>
-          <b><%= t("activerecord.attributes.buch.autor_japanisch", :default => t("activerecord.labels.autor_japanisch", :default => "Autor japanisch")) %>:</b>
-          <%= @buch.autor_japanisch %>
-        </p>
-
-        <p>
-          <b><%= t("activerecord.attributes.buch.hrsg_japanisch", :default => t("activerecord.labels.hrsg_japanisch", :default => "Hrsg japanisch")) %>:</b>
-          <%= @buch.hrsg_japanisch %>
-        </p>
-
-        <p>
-          <b><%= t("activerecord.attributes.buch.drehbuch_japanisch", :default => t("activerecord.labels.drehbuch_japanisch", :default => "Drehbuch japanisch")) %>:</b>
-          <%= @buch.drehbuch_japanisch %>
-        </p>
-
-        <p>
-          <b><%= t("activerecord.attributes.buch.reihe_japanisch", :default => t("activerecord.labels.reihe_japanisch", :default => "Reihe japanisch")) %>:</b>
-          <%= @buch.reihe_japanisch %>
-        </p>
-
-        <p>
-          <b><%= t("activerecord.attributes.buch.titel_japanisch", :default => t("activerecord.labels.titel_japanisch", :default => "Titel japanisch")) %>:</b>
-          <%= @buch.titel_japanisch %>
-        </p>
-
-        <p>
-          <b><%= t("activerecord.attributes.buch.verlag_japanisch", :default => t("activerecord.labels.verlag_japanisch", :default => "Verlag japanisch")) %>:</b>
-          <%= @buch.verlag_japanisch %>
-        </p>
-
-        <p>
-          <b><%= t("activerecord.attributes.buch.literaturvorlage_japanisch", :default => t("activerecord.labels.literaturvorlage_japanisch", :default => "Literaturvorlage japanisch")) %>:</b>
-          <%= @buch.literaturvorlage_japanisch %>
-        </p>
-
-        <p>
-          <b><%= t("activerecord.attributes.buch.nacsis_japanisch", :default => t("activerecord.labels.nacsis_japanisch", :default => "Nacsis japanisch")) %>:</b>
-          <%= @buch.nacsis_japanisch %>
-        </p>
-
-        <p>
-          <b><%= t("activerecord.attributes.buch.jid", :default => t("activerecord.labels.jid", :default => "Jid")) %>:</b>
-          <%= @buch.jid %>
-        </p>
-
-        <p>
-          <b><%= t("activerecord.attributes.buch.nacsis_url", :default => t("activerecord.labels.nacsis_url", :default => "Nacsis url")) %>:</b>
-          <%= @buch.nacsis_url %>
-        </p>
-
-        <p>
-          <b><%= t("activerecord.attributes.buch.interne_notizen", :default => t("activerecord.labels.interne_notizen", :default => "Interne notizen")) %>:</b>
-          <%= @buch.interne_notizen %>
-        </p>
       <div class="wat-cf">
         <% if can? :manage, @buch %>
           <%= link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_buch_path(@buch), :class => "button" %> 
@@ -229,5 +114,6 @@
     </div>
   </div>
 </div>
-
-<% #content_for :sidebar, render(:partial => 'sidebar') -%>
+<% if can? :manage, @buch %>
+  <% content_for :sidebar, render(:partial => 'book_internal_data') %>
+<% end %>

@@ -24,7 +24,7 @@
       </div>
       <div id="main-navigation">
         <ul class="wat-cf">
-          <li><%= link_to "Bücher", buches_path %></li>
+          <li><%= link_to "Bücher", search_buches_path %></li>
           <li><%= link_to "Entleiher", entleihers_path %></li>
           <li><%= link_to "Leihvorgänge", lendings_path %></li>
         </ul>
@@ -40,7 +40,11 @@
         <% end -%>
       </div>
       <div id="main">
-        <%= yield %>
+        <div class="block">
+          <div class="content"> 
+            <%= yield %>
+          </div>
+        </div>
         <div id="footer">
           <div class="block">
             <p>Copyright &copy; <%= Time.now.year %> Roger Braun.</p>
