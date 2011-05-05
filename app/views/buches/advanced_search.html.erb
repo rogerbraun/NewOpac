@@ -1,0 +1,94 @@
+<div class="block">
+  <div class="content">
+    <div class="inner">
+      <%=form_for @search, :url => search_buches_path, :html => {:class => :form} do |f| %>
+        <table class="table">
+          <tr><td><b>Signatur</b></td><td><%= f.text_field "signatur_contains", :class => "text_field"  %></td>
+              <td><b>Nebensignatur<br />Bandzählung</b></td><td><%= f.text_field "nebensignatur_contains", :class => "text_field"%></td>
+              <td><b>Stifter</b></td><td><%= f.text_field "stifter_contains", :class => "text_field" %></td>
+          </tr>
+          <tr><td rowspan="2"><b>Autor</b></td>
+              <td rowspan="2" colspan="3"><%= f.text_field "autor_or_autor_japanisch_contains", :class => "text_field" %></td>
+              <td><b>Standort</b></td>
+              <td><%= f.text_field "standort_contains", :class => "text_field" %></td>
+          </tr>
+          <tr>
+            <td><b>Publikationsart</b></td>
+            <td><%= f.text_field "publikationsart_contains", :class => "text_field" %></td>
+          </tr>
+          <tr>
+            <td><b>Weitere Autoren</b></td>
+            <td colspan="5"><%= f.text_field "hrsg_or_hrsg_japanisch_contains", :class => "text_field"%></td>
+          </tr> 
+          <tr>
+            <td><b>Titel</b></td>
+            <td colspan="5"><%= f.text_field "titel_or_titel_japanisch_contains", :class => "text_field" %></td>
+          </tr>
+          <tr>
+            <td><b>Verlag</b></td>
+            <td colspan="5"><%= f.text_field "verlag_or_verlag_japanisch_contains", :class => "text_field" %></td>
+          </tr>
+          <tr>
+            <td><b>Ort</b></td>
+            <td><%= f.text_field "ort_contains", :class => "text_field" %></td>
+            <td><b>Seiten</b></td>
+            <td><%= f.text_field "seiten_contains", :class => "text_field" %></td>
+            <td><b>Format</b></td>
+            <td><%= f.text_field "format_contains", :class => "text_field" %></td>
+          </tr>
+          <tr>
+            <td><b>Jahr</b></td>
+            <td><%= f.text_field "jahr_eq", :class => "text_field" %></td>
+            <td><b>Auflage</b></td>
+            <td><%= f.text_field "auflage_contains", :class => "text_field" %></td>
+            <td><b>Bände</b></td>
+            <td><%= f.text_field "baende_contains", :class => "text_field" %></td>
+          </tr>
+          <tr>
+            <td><b>ISBN</b></td>
+            <td colspan="2"><%=f.text_field "isbn_eq", :class => "text_field" %></td>
+            <td><b>ISSN</b></td>
+            <td colspan="2"><%=f.text_field "issn_eq", :class => "text_field" %></td>
+          </tr>
+          <tr>
+            <td rowspan="2"><b>Reihe</b></td>
+            <td colspan="5"><%= f.text_field "reihe_contains", :class => "text_field" %></td>
+          </tr>
+          <tr>
+            <td colspan="5"><%= f.text_field "reihe_japanisch_contains", :class => "text_field" %></td>
+          </tr>
+          <tr>
+            <td><b>Inhalt</b></td>
+            <td colspan="5"><%= f.text_field "inhalt_contains", :class => "text_field" %></td>
+          </tr>
+          <tr>
+            <td><b>Anmerkungen</b></td>
+            <td colspan="5"><%= f.text_field "anmerkungen_contains", :class => "text_field" %></td>
+          </tr>
+          <tr> 
+            <td><b>Nacsis-URL</b></td>
+            <td colspan="5"><%=f.text_field "nacsis_url_contains", :class => "text_field" %></td>
+          </tr>
+          <tr>
+            <td><b>Nacsis-Eintrag</b></td>
+            <td colspan="5"><%= f.text_field "nacsis_japanisch_contains", :class => "text_field" %></td>
+          </tr>
+          <tr>
+            <td><b>Sprache</b></td>
+            <td><%= f.text_field "sprache_contains", :class => "text_field" %></td>
+            <td><b>Preis</b></td>
+            <td><%= f.text_field "preis_contains", :class => "text_field" %></td>
+            <td><b>Inventarnummer</b></td>
+            <td><%= f.text_field "invent_contains", :class => "text_field" %></td>
+          </tr>
+          <tr>
+            <td><b>Bearbeiter</b></td>
+            <td><%= f.text_field "bearbeiter_contains", :class => "text_field" %></td>
+            <td colspan=3"> <button class="button" type="submit">Suchen</button></td>
+          </tr>
+        </table>
+      <% end %>
+      
+    </div>
+  </div>
+</div>

@@ -14,6 +14,13 @@ class BuchesController < ApplicationController
     end
   end
 
+  def advanced_search
+    @search = Buch.search(params[:search])
+    respond_to do |format|
+      format.html
+    end 
+  end
+
   def search
     @search = Buch.search(params[:search])
     @buches = @search.paginate(:page => params[:page], :per_page => Buch.per_page)

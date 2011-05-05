@@ -6,6 +6,8 @@ Ausleihe::Application.routes.draw do
   resources :entleihers
 
   get "buches/search", :to => "buches#search", :as => "search_buches"
+
+  get "buches/advanced_search", :to => "buches#advanced_search", :as => "advanced_search_buches"
   resources :buches
 
   post "lendings/return/:id",:to =>  "lendings#return", :as => "return_lending"
