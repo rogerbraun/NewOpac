@@ -16,7 +16,31 @@
     <p><%= link_to @buch.current_lending.entleiher.name, @buch.current_lending.entleiher %></p>
     <h4>Entliehen bis</h4>
     <p><%= @buch.current_lending.leihende %></p>
-    
+    <div class="group nav wat-cf">
+      <button class="button">
+        <%=link_to "Buch zurückgeben", return_lending_path(@buch.current_lending), :method => :post %>
+      </button>
     </div>
   </div>
 <% end %>
+<% if @lending then%>
+  <div class="block notice">
+    <h3>Verleihen</h3>
+    <div class="content">  
+      <%= simple_form_for @lending, :html => {:class => "form"} do |f| %>
+        <div class="group">
+          <%= f.label :leihende, :class => "label"%>      
+          <%= f.date_select :leihende %>
+        </div>
+        <div class="group">
+          <%= f.association :entleiher, :collection => Entleiher.all(:order => :name),:label_html => { :class => 'label' }%>
+        </div>
+        <%= f.hidden_field :buch_id %>
+        <div class="group navform wat-cf"> 
+          <button class="button" type="submit">Verleihen</button> 
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+

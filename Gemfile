@@ -34,6 +34,8 @@ gem "meta_search"
 # group :development, :test do
 #   gem 'webrat'
 # end
+gem "simple_form"
+
 
 group :development do
   gem "web-app-theme", ">= 0.6.2"

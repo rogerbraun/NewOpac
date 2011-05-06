@@ -34,6 +34,13 @@ class BuchesController < ApplicationController
   def show
     @buch = Buch.find(params[:id])
     authorize! :read, @buch 
+    if can? :create, Lending and not @buch.entliehen? then
+      @lending = Lending.new
+      @lending.leihende = Time.now + 4.weeks
+      @lending.entleiher_id = session[:last_lending_user] 
+      @lending.returned = false
+      @lending.buch = @buch
+    end
 
     respond_to do |format|
       format.html # show.html.erb
