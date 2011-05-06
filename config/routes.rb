@@ -8,6 +8,8 @@ Ausleihe::Application.routes.draw do
   get "buches/search", :to => "buches#search", :as => "search_buches"
 
   get "buches/advanced_search", :to => "buches#advanced_search", :as => "advanced_search_buches"
+
+  get "buches/openlibrary", :to => "buches#openlibrary", :as => "openlibrary_buches"
   resources :buches
 
   post "lendings/return/:id",:to =>  "lendings#return", :as => "return_lending"

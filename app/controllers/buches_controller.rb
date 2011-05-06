@@ -29,6 +29,13 @@ class BuchesController < ApplicationController
     end 
   end
 
+  def openlibrary
+    @data = JSON.parse(open("http://openlibrary.org/api/books?bibkeys=ISBN:#{params[:isbn]}&jscmd=data&format=json").read)
+    respond_to do |format|
+      format.json { render :json =>  @data}
+    end
+  end
+
   # GET /buchfs/1
   # GET /buches/1.xml
   def show
