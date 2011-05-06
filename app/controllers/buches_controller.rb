@@ -30,7 +30,7 @@ class BuchesController < ApplicationController
   end
 
   def openlibrary
-    @data = JSON.parse(open("http://openlibrary.org/api/books?bibkeys=ISBN:#{params[:isbn]}&jscmd=data&format=json").read)
+    @data = ActiveSupport::JSON.decode(open("http://openlibrary.org/api/books?bibkeys=ISBN:#{params[:isbn]}&jscmd=data&format=json").read)
     respond_to do |format|
       format.json { render :json =>  @data}
     end
