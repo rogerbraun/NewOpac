@@ -10,6 +10,7 @@ Ausleihe::Application.routes.draw do
   get "buches/advanced_search", :to => "buches#advanced_search", :as => "advanced_search_buches"
 
   get "buches/openlibrary", :to => "buches#openlibrary", :as => "openlibrary_buches"
+  get "buches/google_books", :to => "buches#google_books", :as => "google_books_buches"
   resources :buches
 
   post "lendings/return/:id",:to =>  "lendings#return", :as => "return_lending"

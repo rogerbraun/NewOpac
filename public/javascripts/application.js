@@ -7,6 +7,7 @@ function test(adress, isbn) {
       parameters: {isbn: $("buch_isbn").value},
       onSuccess: function(transport){
         var response = transport.responseText || "no response text";
+        if(response === "empty"){alert("Keine Ergebnisse");}
         var json = transport.responseJSON;
         for(var book in json){
           var data = json[book]
@@ -20,6 +21,26 @@ function test(adress, isbn) {
           $("buch_verlag").value = data.publishers[0].name
           $("buch_jahr").value = data.publish_date
         }
+      },
+      onFailure: function(){ alert('Something went wrong...') }
+    });
+  return false; 
+}
+function read_from_google(adress, query) {
+  new Ajax.Request(adress,
+    {
+      method:'get',
+      parameters: {query: query},
+      onSuccess: function(transport){
+        var response = transport.responseText || "no response text";
+        if(response === "empty"){alert("Keine Ergebnisse");}
+        var data = transport.responseJSON;
+        $("buch_titel").value = data.title 
+        $("buch_autor").value = data.author
+        $("buch_verlag").value = data.publisher
+        $("buch_jahr").value = data.year
+        $("buch_inhalt").value = data.description
+        $("buch_isbn").value = data.isbn
       },
       onFailure: function(){ alert('Something went wrong...') }
     });

@@ -31,10 +31,20 @@ class BuchesController < ApplicationController
 
   def openlibrary
     @data = ActiveSupport::JSON.decode(open("http://openlibrary.org/api/books?bibkeys=ISBN:#{params[:isbn]}&jscmd=data&format=json").read)
+    @data = "empty" if @data.empty?
     respond_to do |format|
       format.json { render :json =>  @data}
     end
   end
+
+  def google_books
+    @data = Google::Book.search(params[:query]).first
+    @data = @data ? {:title => @data.title, :author => @data.creators, :publisher => @data.publisher, :year => @data.date, :description => @data.description, :subjects => @data.subjects, :isbn => @data.isbn} : "empty"
+    respond_to do |format|
+      format.json { render :json =>  @data}
+    end
+  end
+    
 
   # GET /buchfs/1
   # GET /buches/1.xml
