@@ -1,256 +1,95 @@
-
-  <div class="group">
-    <%= f.label :titel, t("activerecord.attributes.buch.titel", :default => "Titel"), :class => :label %>
-    <%= f.text_field :titel, :class => 'text_field' %>
-    <span class="description">Ex: a simple text</span>
-  </div>
-
-  <div class="group">
-    <%= f.label :autor, t("activerecord.attributes.buch.autor", :default => "Autor"), :class => :label %>
-    <%= f.text_field :autor, :class => 'text_field' %>
-    <span class="description">Ex: a simple text</span>
-  </div>
-
-  <div class="group">
-    <%= f.label :hrsg, t("activerecord.attributes.buch.hrsg", :default => "Hrsg"), :class => :label %>
-    <%= f.text_field :hrsg, :class => 'text_field' %>
-    <span class="description">Ex: a simple text</span>
-  </div>
-
-  <div class="group">
-    <%= f.label :signatur, t("activerecord.attributes.buch.signatur", :default => "Signatur"), :class => :label %>
-    <%= f.text_field :signatur, :class => 'text_field' %>
-    <span class="description">Ex: a simple text</span>
-  </div>
-
-  <div class="group">
-    <%= f.label :jahr, t("activerecord.attributes.buch.jahr", :default => "Jahr"), :class => :label %>
-    <%= f.text_field :jahr, :class => 'text_field' %>
-    <span class="description">Ex: a simple text</span>
-  </div>
-
-  <div class="group">
-    <%= f.label :kommentar, t("activerecord.attributes.buch.kommentar", :default => "Kommentar"), :class => :label %>
-    <%= f.text_area :kommentar, :class => 'text_area' %>
-    <span class="description">Ex: a simple text</span>
-  </div>
-
-  <div class="group">
-    <%= f.label :anmerkungen, t("activerecord.attributes.buch.anmerkungen", :default => "Anmerkungen"), :class => :label %>
-    <%= f.text_area :anmerkungen, :class => 'text_area' %>
-    <span class="description">Ex: a simple text</span>
-  </div>
-
-  <div class="group">
-    <%= f.label :auflage, t("activerecord.attributes.buch.auflage", :default => "Auflage"), :class => :label %>
-    <%= f.text_field :auflage, :class => 'text_field' %>
-    <span class="description">Ex: a simple text</span>
-  </div>
-
-  <div class="group">
-    <%= f.label :baende, t("activerecord.attributes.buch.baende", :default => "Baende"), :class => :label %>
-    <%= f.text_field :baende, :class => 'text_field' %>
-    <span class="description">Ex: a simple text</span>
-  </div>
-
-  <div class="group">
-    <%= f.label :bearbeiter, t("activerecord.attributes.buch.bearbeiter", :default => "Bearbeiter"), :class => :label %>
-    <%= f.text_field :bearbeiter, :class => 'text_field' %>
-    <span class="description">Ex: a simple text</span>
-  </div>
-
-  <div class="group">
-    <%= f.label :bestelladresse, t("activerecord.attributes.buch.bestelladresse", :default => "Bestelladresse"), :class => :label %>
-    <%= f.text_area :bestelladresse, :class => 'text_area' %>
-    <span class="description">Ex: a simple text</span>
-  </div>
-
-  <div class="group">
-    <%= f.label :drehbuch, t("activerecord.attributes.buch.drehbuch", :default => "Drehbuch"), :class => :label %>
-    <%= f.text_field :drehbuch, :class => 'text_field' %>
-    <span class="description">Ex: a simple text</span>
-  </div>
-
-  <div class="group">
-    <%= f.label :format, t("activerecord.attributes.buch.format", :default => "Format"), :class => :label %>
-    <%= f.text_field :format, :class => 'text_field' %>
-    <span class="description">Ex: a simple text</span>
-  </div>
-
-  <div class="group">
-    <%= f.label :inhalt, t("activerecord.attributes.buch.inhalt", :default => "Inhalt"), :class => :label %>
-    <%= f.text_area :inhalt, :class => 'text_area' %>
-    <span class="description">Ex: a simple text</span>
-  </div>
-
-  <div class="group">
-    <%= f.label :sprache, t("activerecord.attributes.buch.sprache", :default => "Sprache"), :class => :label %>
-    <%= f.text_field :sprache, :class => 'text_field' %>
-    <span class="description">Ex: a simple text</span>
-  </div>
-
-  <div class="group">
-    <%= f.label :literaturvorlage, t("activerecord.attributes.buch.literaturvorlage", :default => "Literaturvorlage"), :class => :label %>
-    <%= f.text_field :literaturvorlage, :class => 'text_field' %>
-    <span class="description">Ex: a simple text</span>
-  </div>
-
-  <div class="group">
-    <%= f.label :nebensignatur, t("activerecord.attributes.buch.nebensignatur", :default => "Nebensignatur"), :class => :label %>
-    <%= f.text_field :nebensignatur, :class => 'text_field' %>
-    <span class="description">Ex: a simple text</span>
-  </div>
-
-  <div class="group">
-    <%= f.label :ort, t("activerecord.attributes.buch.ort", :default => "Ort"), :class => :label %>
-    <%= f.text_field :ort, :class => 'text_field' %>
-    <span class="description">Ex: a simple text</span>
-  </div>
-
-  <div class="group">
-    <%= f.label :platz, t("activerecord.attributes.buch.platz", :default => "Platz"), :class => :label %>
-    <%= f.text_field :platz, :class => 'text_field' %>
-    <span class="description">Ex: a simple text</span>
-  </div>
-
-  <div class="group">
-    <%= f.label :preis, t("activerecord.attributes.buch.preis", :default => "Preis"), :class => :label %>
-    <%= f.text_field :preis, :class => 'text_field' %>
-    <span class="description">Ex: a simple text</span>
-  </div>
-
-  <div class="group">
-    <%= f.label :publikationsart, t("activerecord.attributes.buch.publikationsart", :default => "Publikationsart"), :class => :label %>
-    <%= f.text_field :publikationsart, :class => 'text_field' %>
-    <span class="description">Ex: a simple text</span>
-  </div>
-
-  <div class="group">
-    <%= f.label :reihe, t("activerecord.attributes.buch.reihe", :default => "Reihe"), :class => :label %>
-    <%= f.text_field :reihe, :class => 'text_field' %>
-    <span class="description">Ex: a simple text</span>
-  </div>
-
-  <div class="group">
-    <%= f.label :seiten, t("activerecord.attributes.buch.seiten", :default => "Seiten"), :class => :label %>
-    <%= f.text_field :seiten, :class => 'text_field' %>
-    <span class="description">Ex: a simple text</span>
-  </div>
-
-  <div class="group">
-    <%= f.label :stifter, t("activerecord.attributes.buch.stifter", :default => "Stifter"), :class => :label %>
-    <%= f.text_field :stifter, :class => 'text_field' %>
-    <span class="description">Ex: a simple text</span>
-  </div>
-
-  <div class="group">
-    <%= f.label :verlag, t("activerecord.attributes.buch.verlag", :default => "Verlag"), :class => :label %>
-    <%= f.text_field :verlag, :class => 'text_field' %>
-    <span class="description">Ex: a simple text</span>
-  </div>
-
-  <div class="group">
-    <%= f.label :standort, t("activerecord.attributes.buch.standort", :default => "Standort"), :class => :label %>
-    <%= f.text_field :standort, :class => 'text_field' %>
-    <span class="description">Ex: a simple text</span>
-  </div>
-
-  <div class="group">
-    <%= f.label :datensatz, t("activerecord.attributes.buch.datensatz", :default => "Datensatz"), :class => :label %>
-    <%= f.text_field :datensatz, :class => 'text_field' %>
-    <span class="description">Ex: a simple text</span>
-  </div>
-
-  <div class="group">
-    <%= f.label :aufnahmedatum, t("activerecord.attributes.buch.aufnahmedatum", :default => "Aufnahmedatum"), :class => :label %>
-    <%= f.date_select :aufnahmedatum, :class => 'date_select' %>
-    <span class="description">Ex: a simple text</span>
-  </div>
-
-  <div class="group">
-    <%= f.label :issn, t("activerecord.attributes.buch.issn", :default => "Issn"), :class => :label %>
-    <%= f.text_field :issn, :class => 'text_field' %>
-    <span class="description">Ex: a simple text</span>
-  </div>
-
-  <div class="group">
-    <%= f.label :isbn, t("activerecord.attributes.buch.isbn", :default => "Isbn"), :class => :label %>
-    <%= f.text_field :isbn, :class => 'text_field' %>
-    <span class="description">Ex: a simple text</span>
-  </div>
-
-  <div class="group">
-    <%= f.label :invent, t("activerecord.attributes.buch.invent", :default => "Invent"), :class => :label %>
-    <%= f.text_field :invent, :class => 'text_field' %>
-    <span class="description">Ex: a simple text</span>
-  </div>
-
-  <div class="group">
-    <%= f.label :autor_japanisch, t("activerecord.attributes.buch.autor_japanisch", :default => "Autor japanisch"), :class => :label %>
-    <%= f.text_field :autor_japanisch, :class => 'text_field' %>
-    <span class="description">Ex: a simple text</span>
-  </div>
-
-  <div class="group">
-    <%= f.label :hrsg_japanisch, t("activerecord.attributes.buch.hrsg_japanisch", :default => "Hrsg japanisch"), :class => :label %>
-    <%= f.text_field :hrsg_japanisch, :class => 'text_field' %>
-    <span class="description">Ex: a simple text</span>
-  </div>
-
-  <div class="group">
-    <%= f.label :drehbuch_japanisch, t("activerecord.attributes.buch.drehbuch_japanisch", :default => "Drehbuch japanisch"), :class => :label %>
-    <%= f.text_field :drehbuch_japanisch, :class => 'text_field' %>
-    <span class="description">Ex: a simple text</span>
-  </div>
-
-  <div class="group">
-    <%= f.label :reihe_japanisch, t("activerecord.attributes.buch.reihe_japanisch", :default => "Reihe japanisch"), :class => :label %>
-    <%= f.text_field :reihe_japanisch, :class => 'text_field' %>
-    <span class="description">Ex: a simple text</span>
-  </div>
-
-  <div class="group">
-    <%= f.label :titel_japanisch, t("activerecord.attributes.buch.titel_japanisch", :default => "Titel japanisch"), :class => :label %>
-    <%= f.text_field :titel_japanisch, :class => 'text_field' %>
-    <span class="description">Ex: a simple text</span>
-  </div>
-
-  <div class="group">
-    <%= f.label :verlag_japanisch, t("activerecord.attributes.buch.verlag_japanisch", :default => "Verlag japanisch"), :class => :label %>
-    <%= f.text_field :verlag_japanisch, :class => 'text_field' %>
-    <span class="description">Ex: a simple text</span>
-  </div>
-
-  <div class="group">
-    <%= f.label :literaturvorlage_japanisch, t("activerecord.attributes.buch.literaturvorlage_japanisch", :default => "Literaturvorlage japanisch"), :class => :label %>
-    <%= f.text_field :literaturvorlage_japanisch, :class => 'text_field' %>
-    <span class="description">Ex: a simple text</span>
-  </div>
-
-  <div class="group">
-    <%= f.label :nacsis_japanisch, t("activerecord.attributes.buch.nacsis_japanisch", :default => "Nacsis japanisch"), :class => :label %>
-    <%= f.text_field :nacsis_japanisch, :class => 'text_field' %>
-    <span class="description">Ex: a simple text</span>
-  </div>
-
-  <div class="group">
-    <%= f.label :jid, t("activerecord.attributes.buch.jid", :default => "Jid"), :class => :label %>
-    <%= f.text_field :jid, :class => 'text_field' %>
-    <span class="description">Ex: a simple text</span>
-  </div>
-
-  <div class="group">
-    <%= f.label :nacsis_url, t("activerecord.attributes.buch.nacsis_url", :default => "Nacsis url"), :class => :label %>
-    <%= f.text_field :nacsis_url, :class => 'text_field' %>
-    <span class="description">Ex: a simple text</span>
-  </div>
-
-  <div class="group">
-    <%= f.label :interne_notizen, t("activerecord.attributes.buch.interne_notizen", :default => "Interne notizen"), :class => :label %>
-    <%= f.text_field :interne_notizen, :class => 'text_field' %>
-    <span class="description">Ex: a simple text</span>
-  </div>
-        
+<table class="table">
+  <tr><td><b>Signatur</b></td><td><%= f.input :signatur, :label => false, :input_html => {:class => "text_field"} %></td>
+      <td><b>Nebensignatur<br />Bandzählung</b></td><td><%=f.input :nebensignatur, :label => false, :input_html => {:class => "text_field"}%></td>
+      <td><b>Stifter</b></td><td><%= f.input :stifter, :label => false, :input_html => {:class => "text_field"} %></td>
+  </tr>
+  <tr><td rowspan="2"><b>Autor</b></td>
+      <td colspan="3"><%= f.input :autor, :label => false, :input_html => {:class => "text_field"} %></td>
+      <td><b>Standort</b></td>
+      <td><%= f.input :standort, :label => false, :input_html => {:class => "text_field"} %></td>
+  </tr>
+  <tr>
+    <td colspan="3"><%= f.input :autor_japanisch, :label => false, :input_html => {:class => "text_field"} %></td>
+    <td><b>Publikationsart</b></td>
+    <td><%= f.input :publikationsart, :label => false, :input_html => {:class => "text_field"} %></td>
+  </tr>
+  <tr>
+    <td rowspan="2"><b>Weitere Autoren</b></td>
+    <td colspan="5"><%= f.input :hrsg, :label => false, :input_html => {:class => "text_field"}%></td>
+  </tr> 
+  <tr>
+    <td colspan="5"><%= f.input :hrsg_japanisch, :label => false, :input_html => {:class => "text_field"} %></td>
+  </tr>
+  <tr>
+    <td rowspan="2"><b>Titel</b></td>
+    <td colspan="5"><%= f.input :titel, :label => false, :input_html => {:class => "text_field"} %></td>
+  </tr>
+  <tr>
+    <td colspan="5"><%= f.input :titel_japanisch, :label => false, :input_html => {:class => "text_field"} %></td>
+  </td>
+  <tr>
+    <td><b>Verlag</b></td>
+    <td colspan="3"><%= f.input :verlag, :label => false, :input_html => {:class => "text_field"} %></td>
+    <td colspan="2"><%= f.input :verlag_japanisch, :label => false, :input_html => {:class => "text_field"} %></td>
+  </tr>
+  <tr>
+    <td><b>Ort</b></td>
+    <td><%= f.input :ort, :label => false, :input_html => {:class => "text_field"} %></td>
+    <td><b>Seiten</b></td>
+    <td><%= f.input :seiten, :label => false, :input_html => {:class => "text_field"} %></td>
+    <td><b>Format</b></td>
+    <td><%= f.input :format, :label => false, :input_html => {:class => "text_field"} %></td>
+  </tr>
+  <tr>
+    <td><b>Jahr</b></td>
+    <td><%= f.input :jahr, :label => false, :input_html => {:class => "text_field"} %></td>
+    <td><b>Auflage</b></td>
+    <td><%= f.input :auflage, :label => false, :input_html => {:class => "text_field"} %></td>
+    <td><b>Bände</b></td>
+    <td><%= f.input :baende, :label => false, :input_html => {:class => "text_field"} %></td>
+  </tr>
+  <tr>
+    <td><b>ISBN</b></td>
+    <td colspan="2"><%=f.input :isbn, :label => false, :input_html => {:class => "text_field"} %></td>
+    <td><b>ISSN</b></td>
+    <td colspan="2"><%=f.input :issn, :label => false, :input_html => {:class => "text_field"} %></td>
+  </tr>
+  <tr>
+    <td rowspan="2"><b>Reihe</b></td>
+    <td colspan="5"><%= f.input :reihe, :label => false, :input_html => {:class => "text_field"} %></td>
+  </tr>
+  <tr>
+    <td colspan="5"><%= f.input :reihe_japanisch, :label => false, :input_html => {:class => "text_field"} %></td>
+  </tr>
+  <tr>
+    <td><b>Inhalt</b></td>
+    <td colspan="5"><%= f.input :inhalt, :label => false, :input_html => {:class => "text_area", :rows => 20} %></td>
+  </tr>
+  <tr>
+    <td><b>Anmerkungen</b></td>
+    <td colspan="5"><%= f.input :anmerkungen, :label => false, :input_html => {:class => "text_area", :rows => 20} %></td>
+  </tr>
+  <tr> 
+    <td><b>Nacsis-URL</b></td>
+    <td colspan="5"><%=f.input :nacsis_url, :label => false, :input_html => {:class => "text_field"} %></td>
+  </tr>
+  <tr>
+    <td><b>Nacsis-Eintrag</b></td>
+    <td colspan="5"><%= f.text_area :nacsis_japanisch, :label => false, :class => "text_area", :rows => 20 %></td>
+  </tr>
+  <tr>
+    <td><b>Sprache</b></td>
+    <td><%= f.input :sprache, :label => false, :input_html => {:class => "text_field"} %></td>
+    <td><b>Preis</b></td>
+    <td><%= f.input :preis, :label => false, :input_html => {:class => "text_field"} %></td>
+    <td><b>Inventarnummer</b></td>
+    <td><%= f.input :invent, :label => false, :input_html => {:class => "text_field"}%></td>
+  </tr>
+  <tr>
+    <td><b>Bearbeiter</b></td>
+    <td colspan="3"><%= f.input :bearbeiter, :label => false, :input_html => {:class => "text_field"} %></td>
+  </tr>
+</table>
 <div class="group navform wat-cf">
   <button class="button" type="submit">
     <%= image_tag("web-app-theme/icons/tick.png", :alt => "#{t("web-app-theme.save", :default => "Save")}") %> <%= t("web-app-theme.save", :default => "Save") %>

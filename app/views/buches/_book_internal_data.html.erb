@@ -18,7 +18,7 @@
     <p><%= @buch.current_lending.leihende %></p>
     <div class="group nav wat-cf">
       <button class="button">
-        <%=link_to "Buch zurückgeben", return_lending_path(@buch.current_lending), :method => :post %>
+        <%= link_to "Buch zurückgeben", return_lending_path(@buch.current_lending), :method => :post %>
       </button>
     </div>
   </div>
