@@ -25,8 +25,12 @@
       <div id="main-navigation">
         <ul class="wat-cf">
           <li><%= link_to "Bücher", search_buches_path %></li>
-          <li><%= link_to "Entleiher", entleihers_path %></li>
-          <li><%= link_to "Leihvorgänge", lendings_path %></li>
+          <% if can? :read, Entleiher %>
+            <li><%= link_to "Entleiher", entleihers_path %></li>
+          <% end %>
+          <% if can? :read, Lending %>
+            <li><%= link_to "Leihvorgänge", lendings_path %></li>
+          <% end %>
           <li><%= link_to "Expertensuche", advanced_search_buches_path %></li>
         </ul>
 

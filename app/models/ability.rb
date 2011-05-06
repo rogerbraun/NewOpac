@@ -2,10 +2,11 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    if user.try(:email) == "davinelulinvega@gmail.com" 
+    user ||= User.new
+    if user.email == "davinelulinvega@gmail.com" 
       can :manage, :all
     else
-      can :read, :all
+      can :read, Buch
     end
   end
 end

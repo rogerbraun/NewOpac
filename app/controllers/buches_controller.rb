@@ -4,7 +4,6 @@ class BuchesController < ApplicationController
   # GET /buches
   # GET /buches.xml
   def index
-
     @buches = Buch.paginate :page => params[:page], :order => "id"
     authorize! :read, @buches 
 
@@ -24,7 +23,7 @@ class BuchesController < ApplicationController
   def search
     @search = Buch.search(params[:search])
     @buches = @search.paginate(:page => params[:page], :per_page => Buch.per_page)
-    authorize! :read, @buches 
+    authorize! :read, Buch 
     respond_to do |format|
       format.html
     end 
