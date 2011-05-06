@@ -39,7 +39,7 @@ class CreateBuches < ActiveRecord::Migration
       t.string :titel_japanisch
       t.string :verlag_japanisch
       t.string :literaturvorlage_japanisch
-      t.string :nacsis_japanisch
+      t.text :nacsis_japanisch
       t.integer :jid
       t.string :nacsis_url
       t.string :interne_notizen
