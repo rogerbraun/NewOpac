@@ -1,7 +1,15 @@
+#encoding: utf-8
 class IsIsbnValidator < ActiveModel::EachValidator
   def validate_each(object, attribute, value)
     unless value.length == 10 or value.length == 13 then 
       object.errors[attribute] << (options[:message] || "is not formatted properly") 
+    end
+  end
+end
+class IsSignatureValidator < ActiveModel::EachValidator
+  def validate_each(object, attribute, value)
+    unless value == "Signatur folgt" or value =~ /[\dH\-\.]/
+      object.errors[attribute] << (options[:message] || "ist keine gültige Signatur") 
     end
   end
 end
@@ -12,6 +20,7 @@ class Buch < ActiveRecord::Base
   @@per_page = 10
 
   validates :isbn, :is_isbn => true
+  validates :signatur, :is_signature => true
   has_many :lendings
 
   def complete_signature

@@ -24,6 +24,8 @@ SimpleForm.setup do |config|
 
   # CSS class to add for error notification helper.
   # config.error_notification_class = :error_notification
+ 
+  #config.use_html5 = false  # default is true
 
   # ID to add for error notification helper.
   # config.error_notification_id = nil
@@ -73,5 +75,5 @@ SimpleForm.setup do |config|
   # config.default_input_size = 50
 
   # When false, do not use translations for labels, hints or placeholders.
-  # config.translate = true
+  # config.translate = false 
 end

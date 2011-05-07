@@ -69,6 +69,7 @@ class BuchesController < ApplicationController
   # GET /buches/new.xml
   def new
     @buch = Buch.new
+    @buch.signatur = "Signatur folgt"
 
     authorize! :create, @buch
 
