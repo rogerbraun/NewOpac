@@ -4,8 +4,13 @@
     <p>
     <form class="form">
       <div class="group navform wat-cf">
-        <button class="button" onclick="return test('<%= openlibrary_buches_path %>')">
+        <button class="button" onclick="return read_from_openlibrary('<%= openlibrary_buches_path %>')">
           Aus ISBN auslesen (über openlibrary.org) 
+        </button>  
+      </div>
+      <div class="group navform wat-cf">
+        <button class="button" onclick="return read_from_nacsis('<%= nacsis_buches_path %>', $('buch_isbn').value)">
+          Aus ISBN auslesen (über Nacsis) 
         </button>  
       </div>
       <div class="group">

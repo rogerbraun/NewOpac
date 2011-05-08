@@ -12,14 +12,24 @@
   <div class="block notice">
     <h3>Verleihdaten</h3>
     <div class="content">  
-    <h4>Entleiher</h4>
-    <p><%= link_to @buch.current_lending.entleiher.name, @buch.current_lending.entleiher %></p>
-    <h4>Entliehen bis</h4>
-    <p><%= @buch.current_lending.leihende %></p>
+    <p>
+    <table class="table">
+      <tr>
+        <th>Entleiher</th>
+        <th>Leihende</th>
+      </tr>
+      <tr class="<%= @buch.current_lending.overdue? ? "overdue" : "" %>">
+        <th><%= link_to @buch.current_lending.entleiher.name, @buch.current_lending.entleiher %></th>
+        <th><%= @buch.current_lending.leihende %></th>
+      </tr>
+    </table>
+    <p>
     <div class="group nav wat-cf">
-      <button class="button">
-        <%= link_to "Buch zurückgeben", return_lending_path(@buch.current_lending), :method => :post %>
-      </button>
+      <%= form_for @buch.current_lending, :url => return_lending_path(@buch.current_lending) do %>
+        <button class="button">
+          Buch zurückgeben
+        </button>
+      <% end -%>
     </div>
   </div>
 <% end %>
@@ -27,6 +37,7 @@
   <div class="block notice">
     <h3>Verleihen</h3>
     <div class="content">  
+      <p>
       <%= simple_form_for @lending, :html => {:class => "form"} do |f| %>
         <div class="group">
           <%= f.label :leihende, :class => "label"%>      
@@ -40,6 +51,7 @@
           <button class="button" type="submit">Verleihen</button> 
         </div>
       <% end %>
+     </p>
     </div>
   </div>
 <% end %>

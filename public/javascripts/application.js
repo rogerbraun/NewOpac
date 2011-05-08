@@ -1,6 +1,6 @@
 // Place your application-specific JavaScript functions and classes here
 // This file is automatically included by javascript_include_tag :defaults
-function test(adress, isbn) {
+function read_from_openlibrary(adress, isbn) {
   new Ajax.Request(adress,
     {
       method:'get',
@@ -41,6 +41,21 @@ function read_from_google(adress, query) {
         $("buch_jahr").value = data.year
         $("buch_inhalt").value = data.description
         $("buch_isbn").value = data.isbn
+      },
+      onFailure: function(){ alert('Something went wrong...') }
+    });
+  return false; 
+}
+function read_from_nacsis(adress, query) {
+  new Ajax.Request(adress,
+    {
+      method:'get',
+      parameters: {isbn: query},
+      onSuccess: function(transport){
+        var response = transport.responseText || "no response text";
+        if(response === "empty"){alert("Keine Ergebnisse");}
+        var data = transport.responseJSON;
+        $("buch_nacsis_japanisch").value = data.nacsis ;
       },
       onFailure: function(){ alert('Something went wrong...') }
     });

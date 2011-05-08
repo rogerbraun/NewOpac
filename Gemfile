@@ -13,6 +13,8 @@ gem "mysql2", "< 0.3"
 gem "meta_search"
 
 gem "google-book", :require => "google/book"
+gem "nokogiri"
+gem "rest-client"
 
 # Use unicorn as the web server
 # gem 'unicorn'

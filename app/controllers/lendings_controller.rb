@@ -56,7 +56,7 @@ class LendingsController < ApplicationController
 
     respond_to do |format|
       if @lending.save
-        format.html { redirect_to(search_buches_path, :notice => t("models.lendings.created") ) }
+        format.html { redirect_to(:back, :notice => t("models.lendings.created") ) }
         format.xml  { render :xml => @lending, :status => :created, :location => @lending }
       else
         format.html { render :action => "new" }

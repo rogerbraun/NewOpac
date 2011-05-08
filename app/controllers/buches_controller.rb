@@ -44,7 +44,22 @@ class BuchesController < ApplicationController
       format.json { render :json =>  @data}
     end
   end
-    
+
+  def nacsis
+    response = RestClient.post 'http://webcat.nii.ac.jp/cgi-bin/eng/krkproc', :db => "all", :isbn => params[:isbn] 
+    if response.code == 200 and not response.to_s["0 record(s)"]
+      doc = Nokogiri::HTML(response.to_s)
+      url = doc.css("li:nth-child(1) a").first.attribute("href").value
+      book = RestClient.get "http://webcat.nii.ac.jp/" + url
+      doc2 = Nokogiri::HTML(book.to_s)
+      @data = {:nacsis => doc2.css("pre:nth-child(7)").text}
+    else
+      @data = "empty"
+    end
+    respond_to do |format|
+      format.json { render :json =>  @data}
+    end
+  end
 
   # GET /buchfs/1
   # GET /buches/1.xml

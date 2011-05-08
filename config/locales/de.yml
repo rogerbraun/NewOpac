@@ -21,7 +21,7 @@ de:
       created_at: "Erstellungsdatum" 
       complete_signature: "Vollständige Signatur"
     lendings:
-      creates: "Buch erfolgreich verliehen." 
+      created: "Buch erfolgreich verliehen." 
   web-app-theme:
     new: "Neu"
     all: "All"
@@ -41,5 +41,5 @@ de:
     order: [ :day, :month, :year ]
     day_names: [Sonntag, Montag, Dienstag, Mittwoch, Donnerstag, Freitag, Samstag]
     abbr_day_names: [So, Mo, Di, Mo, Do, Fr, Sa]
-    month_names: [~, Januar, Februar, Maerz, April, Mai, Juni, Juli, August, September, Oktober, November, Dezeber]
+    month_names: [~, Januar, Februar, Maerz, April, Mai, Juni, Juli, August, September, Oktober, November, Dezember]
     abbr_month_names: [~, Jan., Feb., Maerz, Apr., Mai, Juni, Juli, Aug., Sept.,  Okt., Nov., Dez.]

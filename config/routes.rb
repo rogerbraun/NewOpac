@@ -11,9 +11,10 @@ Ausleihe::Application.routes.draw do
 
   get "buches/openlibrary", :to => "buches#openlibrary", :as => "openlibrary_buches"
   get "buches/google_books", :to => "buches#google_books", :as => "google_books_buches"
+  get "buches/nacsis", :to => "buches#nacsis", :as => "nacsis_buches"
   resources :buches
 
-  post "lendings/return/:id",:to =>  "lendings#return", :as => "return_lending"
+  put "lendings/return/:id",:to =>  "lendings#return", :as => "return_lending"
   
   
 

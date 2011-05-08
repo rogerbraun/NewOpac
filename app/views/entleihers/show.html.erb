@@ -63,11 +63,23 @@
 
   <p>
     <b>Entliehene Bücher</b>
-    <ul class="list">
+    <table class="table">
+      <tr>
+        <th>Buch</th><th>Überfällig</th><th>Zurückgeben</th>
+      </tr>
       <% @entleiher.lendings.reject(&:returned?).each do |lending| %>
-        <li><%=link_to lending.buch.titel, lending.buch %> | <%= link_to "Buch zurückgeben", return_lending_path(lending), :method => :post %> </li>
+        <tr class="<%= lending.overdue? ? "overdue" : "" %>">
+          <td><%=link_to lending.buch.titel, lending.buch %></td><td><%= lending.overdue? ? "Ja" : "Nein" %></td>
+          <td>
+            <%= form_for lending, :url => return_lending_path(lending) do %>
+              <button class="button">
+                Buch zurückgeben
+              </button>
+            <% end -%>
+          </td>
+        </tr>
       <% end %>
-    </li>
+    </table>
   </p>
 
 

@@ -6,6 +6,9 @@
         <%= t "models.books.titel" %>
       </th>
       <th><%= t("models.books.complete_signature") %></th>
+      <% if can? :read, Lending %>
+        <th>Entleiher</th>
+      <% end %>
       <th class="last">&nbsp;</th>
     </tr>
     <% books.each do |buch| -%>
@@ -19,6 +22,9 @@
       <td>
         <%= buch.complete_signature%>
       </td>
+      <% if can? :read, Lending %>
+        <td><%= buch.entliehen? ? buch.current_lending.entleiher.name : "Nicht entliehen" %></td>
+      <% end %>
       <td class="last">
         <%= link_to "#{t("web-app-theme.show", :default => "Show")}", buch_path(buch) %> <br>
         <% if can? :update, buch %>
