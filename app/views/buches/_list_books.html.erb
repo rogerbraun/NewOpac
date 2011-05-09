@@ -1,11 +1,11 @@
 <div class="inner">
   <table class="table">
     <tr>             
-      <th class="first">ID</th>
+      <th class="first"><%= sort_link search, :id %></th>
                 <th>
-        <%= t "models.books.titel" %>
+        <%= sort_link search, :titel %>
       </th>
-      <th><%= t("models.books.complete_signature") %></th>
+      <th><%= sort_link search, :signatur %></th>
       <% if can? :read, Lending %>
         <th>Entleiher</th>
       <% end %>
