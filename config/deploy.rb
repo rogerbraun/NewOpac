@@ -19,7 +19,7 @@ set :deploy_via, :remote_cache
 set :user, "edv"
 set :use_sudo, false
 
-
+after 'deploy:update_code', 'deploy:symlink_db'
 
 namespace :deploy do
   task :start, :roles => :app  do 
@@ -31,6 +31,12 @@ namespace :deploy do
   task :seed do
     run "cd #{current_path} && /usr/bin/env rake db:seed RAILS_ENV=production"
   end
+
+  desc "Symlinks the database.yml"
+  task :symlink_db, :roles => :app do
+    run "ln -nfs #{deploy_to}/shared/config/database.yml #{release_path}/config/database.yml"
+  end
+
 
   task :restart, :roles => :app do
     run "touch #{current_path}/tmp/restart.txt"
