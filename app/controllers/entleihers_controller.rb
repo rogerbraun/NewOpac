@@ -2,9 +2,10 @@ class EntleihersController < ApplicationController
   # GET /entleihers
   # GET /entleihers.xml
   def index
-    @entleihers = Entleiher.paginate :page => params[:page]
+    @search = Entleiher.search(params[:search])
+    @entleihers = @search.paginate(:page => params[:page], :per_page => Buch.per_page)
     
-    authorize! :read, @entleihers
+    authorize! :read, Entleiher
 
     respond_to do |format|
       format.html # index.html.erb

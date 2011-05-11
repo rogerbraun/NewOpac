@@ -12,6 +12,7 @@ de:
   search_by_title: "Titel (D oder J)"
   search_by_author: "Author (D oder J)"
   search_by_signature: "Signatur"
+  search_by_name: "Name"
   search: "Suchen"
   models:
     books:

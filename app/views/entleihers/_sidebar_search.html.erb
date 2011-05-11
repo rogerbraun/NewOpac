@@ -1,0 +1,23 @@
+<div class="block notice">
+  <h3>Suche</h3>
+  <div class="content">
+    <p>
+      <%=form_for search, :url => entleihers_path, :html => {:class => :form} do |f| %>
+          <div class="group">
+          <%= f.label :name_contains, t("search_by_name"),:class => :label %> 
+          <%= f.text_field :name_contains, :class=> "text_field"%> <br />
+          </div>
+          <div class="group">
+          <%= f.label :email_contains, t("search_by_email"),:class => :label %> 
+          <%= f.text_field :email_contains, :class=> "text_field"%> <br />
+          </div>
+          <div class="group navform wat-cf">
+            <button class="button" type="submit">
+              <%= image_tag("web-app-theme/icons/tick.png", :alt => "#{t("search", :default => "Save")}") %> <%= t("search", :default => "Save") %>
+            </button>  
+          </div>
+      <% end %>
+    </p>
+  </div>
+</div>
+
