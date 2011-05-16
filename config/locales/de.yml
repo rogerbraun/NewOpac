@@ -1,4 +1,9 @@
 de:
+  upload: "Datei hinzufügen"
+  attachment:
+    content: "Datei für den Upload"
+    remote_url: "... oder Link zur Datei"
+    klass: "Freigabeebene"
   devise:
     sessions:
       user:

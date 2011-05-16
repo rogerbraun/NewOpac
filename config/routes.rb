@@ -1,9 +1,17 @@
 Ausleihe::Application.routes.draw do
+  get "attachment/new"
+
+  get "attachment/create"
+
+  get "attachment/destroy"
+
   devise_for :users
 
   resources :lendings
 
   resources :entleihers
+  
+  resources :attachments
 
   get "buches/search", :to => "buches#search", :as => "search_buches"
 

@@ -75,6 +75,12 @@ class BuchesController < ApplicationController
       @lending.buch = @buch
     end
 
+    if can? :create, Attachment then
+      @attachment = Attachment.new(:buch_id => @buch.id, :klass => "open")
+    end
+    
+    @attachments = @buch.attachments.select{|el| can? :read, el}
+
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @buch }

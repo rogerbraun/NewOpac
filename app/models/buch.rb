@@ -22,6 +22,7 @@ class Buch < ActiveRecord::Base
   validates :isbn, :is_isbn => true
   validates :signatur, :is_signature => true
   has_many :lendings
+  has_many :attachments
 
   def complete_signature
     "#{self.signatur} #{self.nebensignatur}"

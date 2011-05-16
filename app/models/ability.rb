@@ -7,6 +7,7 @@ class Ability
       can :manage, :all
     else
       can :read, Buch
+      can :read, Attachment, :klass => "open"
     end
   end
 end

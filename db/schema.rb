@@ -10,7 +10,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110507164337) do
+ActiveRecord::Schema.define(:version => 20110515233940) do
+
+  create_table "attachments", :force => true do |t|
+    t.string   "content"
+    t.string   "klass"
+    t.integer  "buch_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "buches", :force => true do |t|
     t.string   "titel"

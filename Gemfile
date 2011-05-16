@@ -45,3 +45,5 @@ group :development do
   gem "faker"
   gem "sequel"
 end
+
+gem "carrierwave"
