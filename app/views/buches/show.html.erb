@@ -111,7 +111,7 @@
           <tr>
             <td><%= attachment.klass %></td>
             <td><%= attachment.content_url[/[^\/]+$/]%></td>
-            <td><%= link_to "Download", attachment.content_url %>
+            <td><%= link_to "Download", root_url + attachment.content_url %>
             <% if can? :destroy, attachment %>
               <%= link_to "#{t("web-app-theme.delete", :default => "Delete")}", attachment_path(attachment), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
             </td>
