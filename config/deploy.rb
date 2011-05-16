@@ -1,3 +1,4 @@
+require 'bundler/capistrano'
 set :application, "NewOpac"
 
 set :repository,  "git@github.com:rogerbraun/NewOpac.git"
