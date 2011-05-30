@@ -23,7 +23,7 @@
 <% if can? :create, Attachment %>
   <div class="block">
     <div class="inner">
-      <%= simple_form_for attachment, :html => {:class => "form", :multipart => true} do |f|%>
+      <%= simple_form_for new_attachment, :html => {:class => "form", :multipart => true} do |f|%>
         <div class="group">
           <%= f.label :content, t("attachment.content"),:class => :label %> 
           <%= f.file_field :content , :class => "file_field"%> <br />

@@ -104,7 +104,7 @@
           <td colspan="2"><%= @buch.created_at %></td>
         </tr>
       </table>
-      <%= render(:partial => "files", :locals => {:attachments => @attachments, :attachment => @attachment })%> 
+      <%= render(:partial => "files", :locals => {:attachments => @attachments, :new_attachment => @attachment })%> 
       <div class="wat-cf">
         <% if can? :manage, @buch %>
           <%= link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_buch_path(@buch), :class => "button" %> 
