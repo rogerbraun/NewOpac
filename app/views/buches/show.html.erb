@@ -104,47 +104,7 @@
           <td colspan="2"><%= @buch.created_at %></td>
         </tr>
       </table>
-      <% unless @attachments.empty? %>
-        <h2>Dateien</h2>
-        <table class="table">
-        <% @attachments.each do |attachment| %>
-          <tr>
-            <td><%= attachment.klass %></td>
-            <td><%= attachment.content_url[/[^\/]+$/]%></td>
-            <td><%= link_to "Download", root_url + attachment.content_url %>
-            <% if can? :destroy, attachment %>
-              <%= link_to "#{t("web-app-theme.delete", :default => "Delete")}", attachment_path(attachment), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
-            </td>
-            <% end %>
-          <% end %>
-        </table>
-      <% end %>
-      <% if can? :create, @attachment %>
-        <div class="block">
-          <div class="inner">
-            <%= simple_form_for @attachment, :html => {:class => "form", :multipart => true} do |f|%>
-              <div class="group">
-                <%= f.label :content, t("attachment.content"),:class => :label %> 
-                <%= f.file_field :content , :class => "file_field"%> <br />
-              </div>
-              <div class="group">
-                <%= f.label :remote_content_url, t("attachment.remote_url"),:class => :label %> 
-                <%= f.text_field :remote_content_url , :class => "text_field"%> <br />
-              </div>
-              <%= f.hidden_field :buch_id %>
-              <div class="group">
-                <%= f.input :klass, :collection => ["open", "restricted"],:as => :radio,  :label => t("attachment.klass"), :label_html => {:class => "label"} %>
-              </div>
-              <div class="group navform wat-cf">
-                <button class="button" type="submit">
-                  <%= image_tag("web-app-theme/icons/tick.png", :alt => "#{t("upload", :default => "Upload")}") %> <%= t("upload", :default => "Upload") %>
-                </button>  
-              </div>
-            <% end %>
-          </div>
-        </div>
-      <% end %>
-      
+      <%= render(:partial => "files", :locals => {:attachments => @attachments, :attachment => @attachment })%> 
       <div class="wat-cf">
         <% if can? :manage, @buch %>
           <%= link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_buch_path(@buch), :class => "button" %> 
