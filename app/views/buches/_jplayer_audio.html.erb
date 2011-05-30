@@ -35,7 +35,7 @@ $(document).ready(function(){
       $("#jquery_jplayer_<%= attachment.id %>").jPlayer({
         ready: function () {
           $(this).jPlayer("setMedia", {
-            <%= format %>: "<%= attachment.content_url %>"
+            <%= format %>: "<%= root_url.chop + attachment.content_url %>"
           });
         },
         cssSelectorAncestor: "#jp_interface_<%= attachment.id %>",
