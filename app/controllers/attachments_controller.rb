@@ -5,6 +5,7 @@ class AttachmentsController < ApplicationController
 
   def create
     @attachment = Attachment.new(params[:attachment])
+    @attachment.filename = params[:attachment][:content].original_filename
     
     authorize! :create, Attachment
 
