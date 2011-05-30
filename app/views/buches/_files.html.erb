@@ -9,12 +9,12 @@
       <% if can? :destroy, attachment %>
         <%= link_to "#{t("web-app-theme.delete", :default => "Delete")}", attachment_path(attachment), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
       </td>
+      <% end %>
       <td>
         <% if attachment.content_url.match /(mp3|m4a)$/ %>
           <%= render :partial => "jplayer_audio", :locals => {:attachment => attachment } %>
         <% end %>
       </td>
-      <% end %>
     </tr>
     <% end %>
   </table>
