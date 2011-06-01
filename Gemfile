@@ -7,6 +7,7 @@ gem "cancan"
 gem "jquery-rails", ">= 1.0.3"
 gem "therubyracer"
 gem "barista"
+gem "json"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
