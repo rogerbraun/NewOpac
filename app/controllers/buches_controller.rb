@@ -39,6 +39,7 @@ class BuchesController < ApplicationController
   end
 
   def google_books
+    puts params.inspect
     @data = Google::Book.search(params[:query]).first
     @data = @data ? {:title => @data.title, :author => @data.creators, :publisher => @data.publisher, :year => @data.date, :description => @data.description, :subjects => @data.subjects, :isbn => @data.isbn} : "empty"
     respond_to do |format|
@@ -50,10 +51,10 @@ class BuchesController < ApplicationController
     response = RestClient.post 'http://webcat.nii.ac.jp/cgi-bin/eng/krkproc', :db => "all", :isbn => params[:isbn] 
     if response.code == 200 and not response.to_s["0 record(s)"]
       doc = Nokogiri::HTML(response.to_s)
-      url = doc.css("li:nth-child(1) a").first.attribute("href").value
-      book = RestClient.get "http://webcat.nii.ac.jp/" + url
+      url = "http://webcat.nii.ac.jp/" + doc.css("li:nth-child(1) a").first.attribute("href").value
+      book = RestClient.get url
       doc2 = Nokogiri::HTML(book.to_s)
-      @data = {:nacsis => doc2.css("pre:nth-child(7)").text}
+      @data = {:nacsis => doc2.css("pre:nth-child(7)").text.strip, :nacsis_url => url}
     else
       @data = "empty"
     end

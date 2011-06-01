@@ -4,12 +4,12 @@
     <p>
     <form class="form">
       <div class="group navform wat-cf">
-        <button class="button" onclick="return read_from_openlibrary('<%= openlibrary_buches_path %>')">
+        <button class="button" onclick="return read_from_openlibrary('<%= openlibrary_buches_path %>', $('#buch_isbn').attr('value'))">
           Aus ISBN auslesen (über openlibrary.org) 
         </button>  
       </div>
       <div class="group navform wat-cf">
-        <button class="button" onclick="return read_from_nacsis('<%= nacsis_buches_path %>', $('buch_isbn').value)">
+        <button class="button" onclick="return read_from_nacsis('<%= nacsis_buches_path %>', $('#buch_isbn').attr('value'))">
           Aus ISBN auslesen (über Nacsis) 
         </button>  
       </div>
@@ -18,7 +18,7 @@
         <input class="text_field" id="google_query" />
       </div>
       <div class="group navform wat-cf">
-        <button class="button" onclick="return read_from_google('<%= google_books_buches_path %>', $('google_query').value)">
+        <button class="button" onclick="return read_from_google('<%= google_books_buches_path %>', $('#google_query')[0].value)">
           Aus Suchbegriff auslesen (über Google)
         </button>  
       </div>
